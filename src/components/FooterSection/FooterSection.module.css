@@ -1,0 +1,150 @@
+.footer {
+  background: #621c1c;
+  padding: 40px 0 0 0;
+  color: white;
+}
+
+/* TOP ROW */
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* CENTER LOGOS */
+.centerLogos {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.horizonLogo,
+.harmonyLogo {
+  height: 80px;
+}
+
+.verticalLine {
+  width: 2px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* RERA RIGHT */
+.reraRight {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.reraText {
+  font-size: 12px;
+  line-height: 1.3;
+  text-align: right;
+  max-width: 350px;
+}
+
+.qr {
+  width: 110px;
+}
+
+/* ADDRESS CENTER */
+.addressBox {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.addressBox span {
+  display: block;
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+
+.socialRow {
+  margin: 35px auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.socialRow img {
+  width:60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.privecypolicy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+}
+
+.privecypolicy a {
+  color: white;
+  text-decoration: none;
+}
+
+.privecypolicy a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+.centerTextBlock {
+  max-width: 1350px;    
+  margin: 30px auto 0;  
+  text-align: center;  
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 1.5;   
+  font-size: 14px;
+  color:var(--moreLight);         
+}
+
+.bottomBar {
+  margin-top: 30px;
+  border-top: 1px solid rgba(222, 194, 194, 0.3);
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--moreLight);
+}
+
+.createdBox img {
+  height: 18px;
+  margin-left: 4px;
+}
+
+@media (max-width: 900px) {
+  .topRow {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .reraRight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .reraText {
+    text-align: center;
+  }
+
+  .qr {
+    width: 90px;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

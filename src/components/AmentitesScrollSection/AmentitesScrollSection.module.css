@@ -1,0 +1,381 @@
+.mainSection {
+  padding: 6rem 0 4rem 0;
+  background: url("/assets/images/overlayBG/new_cover.svg") var(--darkRedcolor);
+}
+
+.gallery {
+  font-size: 80px;
+  color: var(--lightColor);
+  font-family: var(--fontEnglish157);
+  text-align: center;     
+  width: 100%;           
+}
+
+.gallerySection {
+  font-size: 65px;
+  color: var(--lightColor);
+  font-family: var(--fontePrpetuaMT);
+  text-align: center;      
+  width: 100%;            
+}
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 30px;
+    font-family: var(--fontMontserrat);
+
+    .tabButton {
+      padding: 0.6rem 1.8rem;
+      border-radius: 30px;
+      background: transparent;
+      border: 1px solid var(--lightColor);
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    
+    .activeTab {
+      background: var(--lightColor);
+      color: var(--chestnutBrown);
+      border-color: var(--white);
+    }
+  }
+
+
+  .carouselContainer {
+  position: relative;
+  margin: auto;
+  width: 90%;
+  padding-bottom: 90px;
+}
+
+.sliderWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  gap: 2rem;
+  display: flex;
+  padding-left: 10rem;
+  transition: all 0.5s ease;
+}
+
+.card {
+  min-width: calc(100% / 1.3);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  object-fit: cover;
+}
+.imageWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%; 
+  background: linear-gradient(to top, rgba(0, 0, 0, 2), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.caption {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.overlayText {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  color: #fff;
+  z-index: 2;
+}
+
+.propertyTitle {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.locationText {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+
+.btnTextArea {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin-top: 50px;
+}
+
+.visitBtn {
+  border: 1px solid var(--chestnutBrown);
+  background: white;
+  color: var(--primary2);
+
+  &:hover {
+    background: var(--primary2);
+    color: white;
+  }
+}
+
+.carouselButtonArea{
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+.arrowBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.active {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .mainSection {
+    padding: 4rem 0 3rem 0;
+  }
+
+  .gallery {
+    font-size: 50px;
+    padding: 0 1rem;
+  }
+
+  .gallerySection {
+    font-size: 42px;
+    padding: 0 1rem;
+  }
+
+  .tabs {
+    gap: 1.5rem;
+    padding: 20px 1rem;
+  }
+
+  .tabButton {
+    padding: 0.5rem 1.4rem;
+    font-size: 0.85rem;
+  }
+
+  .carouselContainer {
+    width: 95%;
+    padding-bottom: 80px;
+  }
+
+  .slider {
+    padding-left: 5rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    min-width: calc(100% / 1.2);
+    padding: 0.8rem;
+  }
+
+  .overlayText {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .propertyTitle {
+    font-size: 16px;
+  }
+
+  .locationText {
+    font-size: 12px;
+  }
+
+  .btnTextArea {
+    margin-top: 40px;
+  }
+
+  .visitBtn {
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+  }
+
+  .carouselButtonArea {
+    gap: 8px;
+  }
+
+  .arrowBtn img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 3rem 0 2rem 0;
+  }
+
+  .gallery {
+    font-size: 36px;
+    padding: 0 1rem;
+    line-height: 1.2;
+  }
+
+  .gallerySection {
+    font-size: 32px;
+    padding: 0 1rem;
+    line-height: 1.2;
+  }
+
+  .tabs {
+    gap: 0.8rem;
+    padding: 15px 0.5rem;
+  }
+
+  .tabButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .carouselContainer {
+    width: 100%;
+    padding-bottom: 70px;
+  }
+
+  .slider {
+    padding-left: 1rem;
+    gap: 1rem;
+  }
+
+  .card {
+    min-width: 85%;
+    padding: 0.5rem;
+  }
+
+  .imageWrapper::after {
+    height: 50%;
+  }
+
+  .overlayText {
+    left: 12px;
+    bottom: 12px;
+    gap: 3px;
+  }
+
+  .propertyTitle {
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .locationText {
+    font-size: 11px;
+  }
+
+  .btnTextArea {
+    margin-top: 30px;
+    padding: 0 1rem;
+  }
+
+  .visitBtn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .carouselButtonArea {
+    gap: 6px;
+  }
+
+  .arrowBtn img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .gallery {
+    font-size: 30px;
+  }
+
+  .gallerySection {
+    font-size: 26px;
+  }
+
+  .tabs {
+    gap: 0.6rem;
+    padding: 12px 0.5rem;
+  }
+
+  .tabButton {
+    padding: 0.45rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .card {
+    min-width: 90%;
+  }
+
+  .propertyTitle {
+    font-size: 13px;
+  }
+
+  .locationText {
+    font-size: 10px;
+  }
+
+  .visitBtn {
+    padding: 0.65rem 1.3rem;
+    font-size: 0.85rem;
+    max-width: 240px;
+  }
+
+  .arrowBtn img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+
+

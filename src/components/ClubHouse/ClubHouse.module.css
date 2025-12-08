@@ -1,0 +1,197 @@
+.mainSection {
+  padding: 6rem 0 4rem 0;
+  background: url("/assets/images/overlayBG/club_house.svg");
+  height: 900px;
+  display: flex;
+  align-items: center;
+}
+
+.leftContent {
+  width: 50%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  text-align: center;   
+  gap: 1.6rem;
+  padding-right: 100px;
+}
+
+.heading {
+  font-family: var(--fontTimesI);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.heading span {
+  font-weight: 600;
+  font-family: var(--fontTimesI);
+  font-size: 52px;
+}
+
+.logoBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logoImg {
+  width: 180px;
+  height: auto;
+}
+
+.description {
+    max-width: 520px;
+  line-height: 1;
+  font-size: 20px;
+  font-family: var(--fontTimesI);
+  opacity: 0.9;
+}
+
+.descriptionSmall {
+  max-width: 520px;
+  line-height: 1;
+  font-size: 20px;
+  font-family: var(--fontTimesI);
+}
+
+.visitBtn {
+  border: 1px solid var(--chestnutBrown);
+  background: white;
+  color: var(--primary2);
+
+  &:hover {
+    background: var(--primary2);
+    color: white;
+  }
+}
+.btnTextArea {
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding: 4rem 2rem;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .leftContent {
+    width: 100%;
+    padding-right: 0;
+    gap: 1.4rem;
+  }
+
+  .heading {
+    font-size: 36px;
+  }
+
+  .heading span {
+    font-size: 40px;
+  }
+
+  .logoImg {
+    width: 150px;
+  }
+
+  .description,
+  .descriptionSmall {
+    max-width: 100%;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .visitBtn {
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+  }
+
+  .btnTextArea {
+    margin-top: 0.8rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 3rem 1.5rem;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .leftContent {
+    width: 100%;
+    padding-right: 0;
+    gap: 1.2rem;
+  }
+
+  .heading {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .heading span {
+    font-size: 32px;
+  }
+
+  .logoImg {
+    width: 120px;
+  }
+
+  .description,
+  .descriptionSmall {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .visitBtn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .btnTextArea {
+    margin-top: 0.6rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .mainSection {
+    padding: 2.5rem 1rem;
+    min-height: 450px;
+  }
+
+  .leftContent {
+    gap: 1rem;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .heading span {
+    font-size: 28px;
+  }
+
+  .logoImg {
+    width: 100px;
+  }
+
+  .description,
+  .descriptionSmall {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  .visitBtn {
+    padding: 0.65rem 1.3rem;
+    font-size: 0.85rem;
+    max-width: 220px;
+  }
+}

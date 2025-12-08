@@ -1,0 +1,381 @@
+.mainSection {
+  padding: 6rem 0;
+  background: url("/assets/images/overlayBG/bgImg.png") var(--lightColor)
+    no-repeat center/cover;
+
+  .aboutHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .headingTextArea {
+    font-family: var(--fontTimesI);
+    color: var(--primary2);
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 1px solid var(--borderColor);
+    padding-bottom: 10px;
+    width: 80%;
+    margin: 0 auto 20px;
+  
+    .title {
+      font-size: 84px;
+      line-height: 100%;
+    }
+    .subtitle {
+      font-size: 48px;
+      line-height: 100%;
+    }
+  }
+  .mainHeading {
+    margin-bottom: 10px;
+    font-family: var(--fontePrpetuaMT);
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 100%;
+    background: linear-gradient(
+      180deg,
+      #e8b9af 12.79%,
+      #8e503f 70.59%,
+      #631f1f 99.05%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.description {
+  font-family: var(--fontGilroyRegular);
+  color: var(--primaryBlack);
+  font-size: 20px;
+  font-weight: 400;
+
+  span {
+    font-family: var(--fontGilroyBold);
+  }
+}
+
+.legacySection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 40px auto;
+  flex-wrap: wrap;
+
+  .legacyText {
+    font-family: var(--fontTimesI);
+    font-size: 22px;
+    line-height: 28px;
+    color: var(--primaryBlack);
+  }
+}
+
+.legacyBrands {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d32f2f;
+  font-family: Arial, sans-serif;
+}
+
+.brand2 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.brand3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #b8860b;
+}
+
+.brandLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4169e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.descriptionSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+.leftColumn {
+  font-family: var(--fontGilroyRegular);
+  color: var(--primaryBlack);
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.rightColumn h3 {
+  font-family: var(--fontGilroyBold);
+  font-size: 16px;
+  color: var(--primaryBlack);
+}
+
+.rightColumn ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.rightColumn li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #444;
+}
+
+.pricingSection {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width:50%;
+  margin: 0 auto;
+  border: 1px solid var(--chestnutBrown);
+
+  .priceBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: var(--chestnutBrown);
+    width: 50%;
+    padding: 28px 0;
+    font-family: var(--fontGilmerBold);
+    color: white;
+    font-weight: 700;
+
+    .priceAmount{
+      font-size: 56px;
+      line-height: 100%;
+    }
+    .priceText{
+      font-size: 30px;
+      line-height: 100%;
+      letter-spacing: 1rem;
+    }
+  }
+  .areaBox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    width: 50%;
+    padding: 28px 0;
+    font-family: var(--fontGilmerBold);
+    color: var(--chestnutBrown);
+    font-weight: 700;
+
+    .areaSize{
+      font-size: 52px;
+      line-height:100%;
+
+      span{
+        font-size: 18px;
+        line-height: 100%;
+      }
+    }
+    .areaSqM{
+      font-size: 16px;
+      line-height:100%;
+    }
+  }
+}
+.btnTextArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+.flexiblePlane{
+     font-family: var(--fontGilmerBold);
+    font-size: 24px;
+    line-height: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin:30px auto
+}
+  .residenceDetails{
+    font-family: var(--fontTimesI);
+    font-size: 36px;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 30px auto;
+  }
+  .visitBtn{
+    background: var(--primary2);
+    border: 1px solid var(--chestnutBrown);
+    color: white;
+
+    &:hover{
+      background: transparent;
+      color: var(--primary2) ;
+    }
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding: 3rem 0;
+  }
+
+  .aboutHeading .headingTextArea {
+    width: 90%;
+    margin: 0 auto 15px;
+
+    .title {
+      font-size: 42px;
+    }
+    .subtitle {
+      font-size: 24px;
+    }
+  }
+
+  .mainSection .mainHeading {
+    font-size: 40px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 16px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .legacySection {
+    gap: 1rem;
+    margin: 30px auto;
+    padding: 0 20px;
+
+    .legacyText {
+      font-size: 18px;
+      line-height: 24px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .legacyBrands {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+      max-width: 80px;
+      height: auto;
+    }
+  }
+
+  .descriptionSection {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .leftColumn {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  .rightColumn h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .rightColumn li {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .pricingSection {
+    width: 90%;
+    flex-direction: column;
+
+    .priceBox {
+      width: 100%;
+      padding: 20px 0;
+
+      .priceAmount {
+        font-size: 36px;
+      }
+      .priceText {
+        font-size: 20px;
+        letter-spacing: 0.5rem;
+      }
+    }
+
+    .areaBox {
+      width: 100%;
+      padding: 20px 0;
+
+      .areaSize {
+        font-size: 36px;
+
+        span {
+          font-size: 14px;
+        }
+      }
+      .areaSqM {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .btnTextArea {
+    padding: 0 20px;
+
+    .flexiblePlane {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 20px auto;
+    }
+
+    .residenceDetails {
+      font-size: 24px;
+      line-height: 32px;
+      margin: 20px auto;
+    }
+
+    .visitBtn {
+      width: 100%;
+      max-width: 300px;
+      padding: 15px 30px;
+      font-size: 16px;
+    }
+  }
+}

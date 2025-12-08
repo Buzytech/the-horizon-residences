@@ -1,0 +1,499 @@
+.mainSection {
+  padding: 4rem 0;
+  background: url("/assets/images/overlayBG/new_cover.svg") var(--chestnutBrown)
+    repeat center;
+  text-align: center;
+}
+
+.flexWrapper {
+  display: flex;
+  gap: 7rem;
+  align-items: stretch; 
+}
+.formWrapper {
+  max-width: 1024px;
+ 
+}
+.titleTop {
+  font-size: 58px;
+  line-height: 100%;
+  font-family: var(--fontEnglish157);
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--lightColor);
+}
+
+.imagetitle{
+  font-size: 20px;
+  line-height: 100%;
+  font-family: var(--fontTimesI);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+    color: var(--lightColor);
+}
+
+.titleMain {
+  font-size: 68px;
+  line-height: 100%;
+  font-family: var(--fontePrpetuaMT);
+  margin-bottom: 3rem;
+  letter-spacing: 2px;
+    color: var(--lightColor);
+}
+
+.inputGrid {
+  display: grid;
+  gap: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.inputGrid input {
+    width: 35rem;  
+  padding: 0.8rem 1rem;
+  background: transparent;
+  border: 1px solid var(--lightColor);
+  color: var(--primary2);
+  background: #fff;
+  border-radius: 3px;
+}
+
+.inputGrid select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #fff;
+  border: 1px solid var(--lightColor);
+  color: var(--primary2);
+  border-radius: 3px;
+  appearance: none;     
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23000000' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+}
+.inputError {
+  border: 1px solid red !important;
+}
+.phoneRow {
+  display: flex;
+  gap: 1rem;
+  width: 35rem;
+}
+
+.countrySelect {
+  width: 7rem !important;
+  padding: 0.8rem 1rem;
+  background: var(--lightColor);
+  border: 1px solid var(--lightColor);
+  color: var(--primary);
+  border-radius: 3px;
+  font: inherit;
+  cursor: pointer;
+
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23000000' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 14px;
+}
+
+.phoneInput {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: var(--lightColor);
+  border: 1px solid var(--lightColor);
+  color: var(--primary);
+  border-radius: 3px;
+}
+
+.phoneInput::placeholder {
+  color: var(--primary);
+}
+
+.inputGrid input::placeholder {
+  color: var(--primary);
+}
+
+.contactModeLabel {
+  margin: 1rem 0 0.6rem 0;
+  font-size: 1rem;
+}
+
+.radioRow {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.radioRow label,
+.checkRow label {
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--lightColor);
+}
+
+.checkRow {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+.captchaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.captchaBox {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  min-width: 150px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.captchaInput {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #fff;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.refreshBtn {
+  background: #fff;
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 24px;
+  line-height: 1;
+  transition: 0.2s;
+}
+
+.refreshBtn:hover {
+  background: #ddd;
+}
+
+.submitBtn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: white;
+}
+
+.submitBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+  .visitBtn{
+    background: var(--primary2);
+    border: 1px solid var(--chestnutBrown);
+    color: white;
+  }
+
+
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+
+  .flexWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .formWrapper {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .titleTop {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .imagetitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .titleMain {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+  }
+
+  .inputGrid {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .inputGrid input {
+    width: 100%; /* Changed from fixed 22rem */
+    max-width: 100%;
+  }
+
+  /* Phone row mobile fix */
+  .phoneRow {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .countrySelect {
+    width: 6rem !important;
+    min-width: 6rem;
+  }
+
+  .phoneInput {
+    flex: 1;
+    min-width: 0; /* Allow proper flex shrinking */
+  }
+
+  /* Captcha mobile fix */
+  .captchaRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .captchaBox {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .captchaInput {
+    width: 100%;
+  }
+
+  .refreshBtn {
+    width: 100%;
+  }
+
+  .inputGrid select {
+    max-width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .contactModeLabel {
+    font-size: 0.95rem;
+    margin: 1rem 0 0.6rem 0;
+  }
+
+  .radioRow {
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .radioRow label {
+    font-size: 0.9rem;
+  }
+
+  .checkRow {
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .checkRow label {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .submitBtn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+
+  .flexWrapper {
+    gap: 2rem;
+  }
+
+  .formWrapper {
+    padding: 0 15px;
+  }
+
+  .titleTop {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .imagetitle {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .titleMain {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .inputGrid {
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .inputGrid input,
+  .inputGrid select {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  /* Phone row small mobile fix */
+  .phoneRow {
+    gap: 0.5rem;
+  }
+
+  .countrySelect {
+    width: 5.5rem !important;
+    min-width: 5.5rem;
+    padding: 0.7rem 0.5rem;
+  }
+
+  .phoneInput {
+    padding: 0.7rem 0.9rem;
+  }
+
+  /* Captcha small mobile */
+  .captchaRow {
+    gap: 8px;
+  }
+
+  .captchaBox {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .captchaInput {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .refreshBtn {
+    padding: 6px 10px;
+    font-size: 20px;
+  }
+
+  .contactModeLabel {
+    font-size: 0.9rem;
+    margin: 0.8rem 0 0.5rem 0;
+  }
+
+  .radioRow {
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+
+  .radioRow label {
+    font-size: 0.85rem;
+  }
+
+  .checkRow {
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .checkRow label {
+    font-size: 0.85rem;
+  }
+
+  .submitBtn {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+
+  .flexWrapper {
+    gap: 2rem;
+  }
+
+  .formWrapper {
+    padding: 0 15px;
+  }
+
+  .titleTop {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .imagetitle {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .titleMain {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .inputGrid {
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .inputGrid input,
+  .inputGrid select {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .contactModeLabel {
+    font-size: 0.9rem;
+    margin: 0.8rem 0 0.5rem 0;
+  }
+
+  .radioRow {
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+
+  .radioRow label {
+    font-size: 0.85rem;
+  }
+
+  .checkRow {
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .checkRow label {
+    font-size: 0.85rem;
+  }
+
+  .submitBtn {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}

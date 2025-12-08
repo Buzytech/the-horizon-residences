@@ -1,0 +1,275 @@
+.mainBannerSection {
+  padding: 6rem 0;
+  background: url("/assets/images/overlayBG/bgImg.png") var(--lightColor);
+}
+
+
+.flexWrapper {
+  display: flex;
+  gap: 3rem;
+  align-items: stretch; 
+}
+
+
+.imageBox {
+  flex: 1;
+  display: flex;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    
+  border-radius: 4px;
+}
+
+
+.contentBox {
+  flex: 1.2;
+ 
+}
+.headingArea{
+   color: var(--primary2);
+}
+.aboutTitle {
+  font-size:  80px;
+  font-family: var(--fontEnglish157);
+  line-height: 100%;
+}
+
+.heading {
+  font-family: var(--fontePrpetuaMT);
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 100%;
+}
+
+.description {
+font-family: var(--fontGilroyRegular);
+font-size: 18px;
+line-height: 30px;
+font-weight: 400;
+}
+
+.statsBlock {
+  margin: 2rem 0;
+}
+
+.statsHeading {
+  font-family: var(--fontGilroyBold);
+  font-size: 48px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: var(--chestnutBrown);
+
+  span {
+    color:var(--primaryBlue);
+  }
+}
+
+
+.iconGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.iconItem {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+
+.iconItem img {
+  height: auto;
+}
+
+.iconItem p {
+  font-size: 18px;
+  color: var(--chestnutBrown);
+  font-family: var(--fontGilroyBold);
+}
+
+
+.fromText {
+  font-family: var(--fontTimesI);
+  font-size: 22px;
+  color:var(--primaryBlack);
+  margin-bottom: 1rem;
+}
+
+.logoRow {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.logoRow img {
+  opacity: 0.9;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .mainBannerSection {
+    padding: 3rem 0 2rem 0;
+  }
+
+  .flexWrapper {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 20px;
+  }
+
+  .imageBox {
+    width: 100%;
+    height: 300px;
+  }
+
+  .mainImage {
+    border-radius: 8px;
+  }
+
+  .contentBox {
+    width: 100%;
+  }
+
+  .headingArea {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .aboutTitle {
+    font-size: 48px;
+  }
+
+  .heading {
+    font-size: 36px;
+    line-height: 110%;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 26px;
+    text-align: justify;
+  }
+
+  .statsBlock {
+    margin: 1.5rem 0;
+  }
+
+  .statsHeading {
+    font-size: 28px;
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .iconGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .iconItem img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .iconItem p {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .partners {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .fromText {
+    font-size: 0.9rem;
+  }
+
+  .logoRow {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .logoRow img {
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainBannerSection {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .flexWrapper {
+    gap: 1.5rem;
+    padding: 0 15px;
+  }
+
+  .imageBox {
+    height: 250px;
+  }
+
+  .headingArea {
+    margin-bottom: 1rem;
+  }
+
+  .aboutTitle {
+    font-size: 36px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .statsBlock {
+    margin: 1rem 0;
+  }
+
+  .statsHeading {
+    font-size: 22px;
+    margin-bottom: 0.8rem;
+  }
+
+  .iconGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .iconItem img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .iconItem p {
+    font-size: 0.7rem;
+  }
+
+  .partners {
+    margin-top: 1.5rem;
+  }
+
+  .fromText {
+    font-size: 0.85rem;
+  }
+
+  .logoRow {
+    gap: 1rem;
+  }
+
+  .logoRow img {
+    height: 30px;
+  }
+}

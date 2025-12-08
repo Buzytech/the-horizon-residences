@@ -1,0 +1,244 @@
+.mainSection {
+  padding: 6rem 0 4rem 0;
+  background: url("/assets/images/overlayBG/bgImg.png") var(--chestnutBrown) no-repeat center/cover;
+  min-height: calc(100vh - 50px);
+
+  .headingTextArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 10px;
+    margin-bottom: 5rem;
+    
+    .subHeading {
+      font-family: var(--fontEnglish157);
+      font-weight: 400;
+      font-size: 64px;
+      line-height: 100%;
+    }
+    .heading {
+      font-family: var(--fontTimesI);
+      font-size: 64px;
+      font-weight: 300;
+      line-height: 100%;
+    }
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    font-family: var(--fontMontserrat);
+
+    .tabButton {
+      padding: 0.6rem 1.8rem;
+      border-radius: 30px;
+      background: transparent;
+      border: 1px solid var(--lightColor);
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    
+    .activeTab {
+      background: var(--lightColor);
+      color: var(--chestnutBrown);
+      border-color: var(--white);
+    }
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap:72px;
+    margin: 6rem 0;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+.icon {
+  width:70px;
+  height: 70px;
+}
+
+.iconText{
+  color: var(--lightColor);
+  font-size: 16px;
+  font-family: var(--fontGilroyRegular);
+  font-weight: 500;
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.visitBtn {
+  border: 1px solid var(--chestnutBrown);
+  background: white;
+  color: var(--primary2);
+
+  &:hover {
+    background: var(--primary2);
+    color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding: 3rem 0 2rem 0;
+    min-height: auto;
+
+    .headingTextArea {
+      gap: 8px;
+      margin-bottom: 3rem;
+      padding: 0 20px;
+      text-align: center;
+
+      .subHeading {
+        font-size: 48px;
+      }
+
+      .heading {
+        font-size: 32px;
+        line-height: 110%;
+      }
+    }
+
+    .tabs {
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      padding: 0 20px;
+
+      .tabButton {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.85rem;
+      }
+    }
+
+
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 33.33%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 20px;
+      padding: 10px 20px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      grid-template-columns: none; 
+    }
+
+    .grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      scroll-snap-align: center;
+      text-align: center;
+    }
+  }
+
+  .card {
+    gap: 0.5rem;
+  }
+
+  .icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .iconText {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .buttonWrapper {
+    margin-top: 2rem;
+    padding: 0 20px;
+  }
+
+  .visitBtn {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 2rem 0 1.5rem 0;
+
+    .headingTextArea {
+      margin-bottom: 2rem;
+
+      .subHeading {
+        font-size: 36px;
+      }
+
+      .heading {
+        font-size: 24px;
+      }
+    }
+
+    .tabs {
+      gap: 0.6rem;
+
+      .tabButton {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.75rem;
+      }
+    }
+
+
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 33.33%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 20px;
+      padding: 10px 20px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      grid-template-columns: none; 
+    }
+
+    .grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      scroll-snap-align: center;
+      text-align: center;
+    }
+  }
+
+  .icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .iconText {
+    font-size: 13px;
+  }
+
+  .visitBtn {
+    max-width: 260px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,282 @@
+.mainSection {
+  background: #fff;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.heading {
+  font-size: 48px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-family: var(--fontePrpetuaMT);
+  color: var(--primary);
+}
+
+/* ------- Tabs Added ------- */
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d;
+  cursor: pointer;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.tab:hover {
+  color: #000;
+}
+
+.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+.divider {
+  color: #aaa;
+  font-size: 1.2rem;
+}
+/* -------------------------- */
+
+.carouselContainer {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.sliderWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  gap: 2rem;
+  display: flex;
+  transition: all 0.5s ease;
+}
+
+.card {
+  min-width: calc(100% / 3);
+  padding: 1rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.floorButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.floorBtn {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  background: var(--primary2);
+  color: #fff;
+  border: 1px solid var(--chestnutBrown);
+  border-radius: 100px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.floorBtn:hover {
+  background: transparent;
+  color: var(--primary2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.caption {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3d3b3b;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.left {
+  left: -2rem;
+}
+
+.right {
+  right: -2rem;
+}
+
+.btnTextArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 6rem 0 0;
+  
+  .visitBtn{
+    background: var(--primary2);
+    border: 1px solid var(--chestnutBrown);
+    color: white;
+
+    &:hover{
+      background: transparent;
+      color: var(--primary2) ;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .mainSection {
+    padding: 3rem 0;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 20px;
+  }
+
+  .tabsContainer {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 20px;
+  }
+
+  .tab {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  .carouselContainer {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  .slider {
+    gap: 1rem;
+  }
+
+  .card {
+    min-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .card img {
+    border-radius: 4px;
+  }
+
+  .caption {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .arrowBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .left {
+    left: 0.5rem;
+  }
+
+  .right {
+    right: 0.5rem;
+  }
+
+  .btnTextArea {
+    margin: 3rem 0 0;
+    padding: 0 20px;
+
+    .visitBtn {
+      width: 100%;
+      max-width: 300px;
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .mainSection {
+    padding: 2rem 0;
+  }
+
+  .heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .tabsContainer {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tab {
+    font-size: 0.75rem;
+  }
+
+  .carouselContainer {
+    padding: 0 40px;
+  }
+
+  .slider {
+    gap: 0.5rem;
+  }
+
+  .card {
+    padding: 0.3rem;
+  }
+
+  .caption {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .arrowBtn {
+    width: 35px;
+    height: 35px;
+    padding: 0.4rem;
+  }
+
+  .btnTextArea {
+    margin: 2rem 0 0;
+
+    .visitBtn {
+      max-width: 260px;
+      padding: 10px 20px;
+      font-size: 13px;
+    }
+  }
+}

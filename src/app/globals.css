@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "timesI";
+  src: url("/assets/fonts/times_i.woff");
+}
+@font-face {
+  font-family: "perpetua_MT";
+  src: url("/assets/fonts/perpetua_MT.woff");
+}
+@font-face {
+  font-family: "gilroyRegular";
+  src: url("/assets/fonts/gilroyRegular.woff");
+}
+@font-face {
+  font-family: "gilroyBold";
+  src: url("/assets/fonts/gilroyBold.woff");
+}
+@font-face {
+  font-family: "gilmerBold";
+  src: url("/assets/fonts/gilmerBold.woff");
+}
+@font-face {
+  font-family: "gilmerMedium";
+  src: url("/assets/fonts/gilmerMedium.woff");
+}
+@font-face {
+  font-family: "english157";
+  src: url("/assets/fonts/english157.woff");
+}
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primaryBlack: #0a131d;
+  --primaryBlue:#002869;
+  --primary: #72322a;
+  --primary2: #631f1f;
+  --lightColor: #fff7eb;
+  --moreLight:#d7a9a0;
+  --darkRedcolor: #631f1f;
+  --chestnutBrown: #8c4f3d;
+  --borderColor: #e8b9af;
+  --fontTimesI: "timesI";
+  --fontGilroyRegular: "gilroyRegular";
+  --fontGilroyBold: "gilroyBold";
+  --fontePrpetuaMT: "perpetua_MT";
+  --fontMontserrat: "Montserrat", sans-serif;
+  --fontGilmerBold: "gilmerBold";
+  --fontGilmerMedium: "gilmerMedium";
+  --fontEnglish157:"english157";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.horizonContainer {
+  width: 70%;
+  margin: auto;
+}
+
+.btnPrimary {
+  border-radius: 50px;
+  font-family: var(--fontGilmerMedium);
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 600;
+  padding: 1.7rem 4.4rem;
+  cursor: pointer;
+
+}
+
+@media (max-width: 768px) {
+  .horizonContainer {
+    width: 90%;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
