@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 import styles from "./InquiryModal.module.css";
 import { RxCross2 } from "react-icons/rx";
+import { postFormData } from "@/services/ApiService";
+import { useRouter } from "next/navigation";
 
 const InquiryModal = ({ onClose }: { onClose: () => void }) => {
+  const router = useRouter();
+
   const generateCaptcha = () => {
     const a = Math.floor(Math.random() * 9) + 1;
     const b = Math.floor(Math.random() * 9) + 1;
@@ -12,15 +16,62 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
 
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
-  const [error, setError] = useState("");
 
-  const handleSubmit = () => {
-    if (parseInt(captchaInput) !== captcha.answer) {
-      setError("Incorrect answer. Please try again.");
-      return;
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [interest, setInterest] = useState("");
+  const [phoneCode, setPhoneCode] = useState("+91");
+  const [phone, setPhone] = useState("");
+
+  const [errors, setErrors] = useState({
+    fullName: false,
+    email: false,
+    interest: false,
+    phone: false,
+    captcha: false,
+  });
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleSubmit = async (e?: any) => {
+    e?.preventDefault();
+    const newErrors = {
+      fullName: !fullName,
+      email: !email || !validateEmail(email),
+      interest: !interest,
+      phone: !phone || phone.length < 10,
+      captcha: parseInt(captchaInput) !== captcha.answer,
+    };
+
+    setErrors(newErrors);
+
+    const hasError = Object.values(newErrors).some((val) => val);
+    if (hasError) return;
+
+    const body = {
+      firstName: fullName.split(" ")[0] || fullName,
+      lastName: fullName.split(" ")[1] || "",
+      email: email,
+      mobilePhone: phoneCode + phone,
+      comments: "",
+      originFrom: "",
+      product: interest,
+      campaign: "",
+      isUpdatefromUIDate: false,
+      isImported: true,
+      DumpdataObjectId: "0105202114465",
+      tenantId: 914,
+    };
+
+    try {
+      await postFormData(body);
+      router.push("/thank-you");
+    } catch (err) {
+      console.error(err);
     }
-    setError("");
-    alert("Success! Captcha matched.");
   };
 
   return (
@@ -29,20 +80,40 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
         <div className={styles.left}>
           <img src="/assets/images/banner/about.jpg" alt="Horizon Residences" />
         </div>
+
         <div className={styles.right}>
           <button className={styles.closeBtn} onClick={onClose}>
             <RxCross2 />
           </button>
+
           <div className={styles.titles}>
             <h3 className={styles.titleTop}>Your Inquiry</h3>
             <h2 className={styles.titleMain}>OUR PRIORITY</h2>
           </div>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.inputGrid}>
-              <input type="text" placeholder="Full name *" />
-              <input type="email" placeholder="Email *" />
-              <select defaultValue="">
+              <input
+                type="text"
+                placeholder="Full name *"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className={errors.fullName ? styles.inputError : ""}
+              />
+
+              <input
+                type="email"
+                placeholder="Email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={errors.email ? styles.inputError : ""}
+              />
+
+              <select
+                value={interest}
+                onChange={(e) => setInterest(e.target.value)}
+                className={errors.interest ? styles.inputError : ""}
+              >
                 <option value="" disabled>
                   Select your interest *
                 </option>
@@ -52,7 +123,11 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
               </select>
 
               <div className={styles.phoneRow}>
-                <select className={styles.countrySelect} defaultValue="+91">
+                <select
+                  className={styles.countrySelect}
+                  value={phoneCode}
+                  onChange={(e) => setPhoneCode(e.target.value)}
+                >
                   <option value="+91">🇮🇳 +91</option>
                   <option value="+1">🇺🇸 +1</option>
                   <option value="+44">🇬🇧 +44</option>
@@ -62,8 +137,14 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
 
                 <input
                   type="text"
-                  className={styles.phoneInput}
                   placeholder="Mobile Number *"
+                  value={phone}
+                  maxLength={12}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (/^\d*$/.test(value)) setPhone(value);
+                  }}
+                  className={errors.phone ? styles.inputError : ""}
                 />
               </div>
             </div>
@@ -78,9 +159,9 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
               <input
                 type="text"
                 placeholder="Answer"
-                className={styles.captchaInput}
                 value={captchaInput}
                 onChange={(e) => setCaptchaInput(e.target.value)}
+               className={styles.captchaInput}
               />
 
               <button
@@ -89,7 +170,7 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
                 onClick={() => {
                   setCaptcha(generateCaptcha());
                   setCaptchaInput("");
-                  setError("");
+                  setErrors((prev) => ({ ...prev, captcha: false }));
                 }}
               >
                 🔄

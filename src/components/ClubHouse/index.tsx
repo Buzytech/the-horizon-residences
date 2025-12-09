@@ -2,7 +2,11 @@ import React from "react";
 import styles from "./ClubHouse.module.css";
 import { motion } from "framer-motion";
 
-const ClubHouse = () => {
+interface ClubProps {
+  onOpenModal: () => void;
+}
+
+const ClubHouse : React.FC<ClubProps> = ({ onOpenModal }) => {
   return (
     <section className={styles.mainSection}>
       <div className="horizonContainer">
@@ -45,7 +49,7 @@ const ClubHouse = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
             className={styles.btnTextArea}
           >
-            <button className={`btnPrimary ${styles.visitBtn}`}>
+            <button className={`btnPrimary ${styles.visitBtn}`} onClick={onOpenModal}>
               Schedule Site Visit
             </button>
           </motion.div>

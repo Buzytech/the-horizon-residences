@@ -118,9 +118,12 @@
   padding: 0.8rem 1rem;
   background: transparent;
   border: 1px solid var(--lightColor);
-  color: var(--lightColor);
   background: #fff;
   border-radius: 3px;
+}
+
+.inputError {
+  border: 2px solid red !important;
 }
 
 .inputGrid select {

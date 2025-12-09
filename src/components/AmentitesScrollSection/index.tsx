@@ -17,6 +17,11 @@ interface AmenityItem {
   img: string;
 }
 
+interface ScrollSectionProps {
+  onOpenModal: () => void;
+}
+
+
 const tabs: TabType[] = ["Exterior", "Interior"];
 
 const data: Record<TabType, AmenityItem[]> = {
@@ -159,7 +164,7 @@ const data: Record<TabType, AmenityItem[]> = {
   ],
 };
 
-export default function AmentitesScrollSection() {
+ const AmentitesScrollSection  : React.FC<ScrollSectionProps> = ({ onOpenModal }) => {
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<TabType>("Exterior");
   const filteredData = data[activeTab];
@@ -248,10 +253,12 @@ export default function AmentitesScrollSection() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
         className={styles.btnTextArea}
       >
-        <button className={`btnPrimary ${styles.visitBtn}`}>
+        <button className={`btnPrimary ${styles.visitBtn}`} onClick={onOpenModal}>
           Schedule Site Visit
         </button>
       </motion.div>
     </section>
   );
 }
+
+export default AmentitesScrollSection

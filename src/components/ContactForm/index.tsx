@@ -1,10 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import styles from "./ContactForm.module.css";
+import { postFormData } from "@/services/ApiService";
 
-const ContactForm = () => {
-  const router = useRouter(); 
+interface FromProps {
+  onOpenModal: () => void;
+}
+
+
+const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
+  const router = useRouter();
 
   const generateCaptcha = () => {
     const a = Math.floor(Math.random() * 9) + 1;
@@ -15,15 +21,59 @@ const ContactForm = () => {
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
   const [error, setError] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [interest, setInterest] = useState("");
+  const [phoneCode, setPhoneCode] = useState("+91");
+  const [phone, setPhone] = useState("");
+  const [errors, setErrors] = useState({
+    fullName: false,
+    email: false,
+    interest: false,
+    phone: false,
+    captcha: false,
+  });
 
-  const handleSubmit = () => {
-    if (parseInt(captchaInput) !== captcha.answer) {
-      setError("Incorrect answer. Please try again.");
-      return;
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  const handleSubmit = async () => {
+    const newErrors = {
+      fullName: !fullName,
+      email: !email || !validateEmail(email),
+      interest: !interest,
+      phone: !phone,
+      captcha: parseInt(captchaInput) !== captcha.answer,
+    };
+
+    setErrors(newErrors);
+
+    const hasError = Object.values(newErrors).some((val) => val);
+    if (hasError) return;
+
+    const body = {
+      firstName: fullName.split(" ")[0] || fullName,
+      lastName: fullName.split(" ")[1] || "",
+      email: email,
+      mobilePhone: phoneCode + phone,
+      comments: "",
+      originFrom: "",
+      product: interest,
+      campaign: "",
+      isUpdatefromUIDate: false,
+      isImported: true,
+      DumpdataObjectId: "0105202114465",
+      tenantId: 914,
+    };
+
+    try {
+      await postFormData(body);
+      router.push("/thank-you");
+    } catch (err) {
+      console.error(err);
     }
-
-    setError("");
-    router.push("/thank-you");
   };
 
   return (
@@ -36,20 +86,36 @@ const ContactForm = () => {
               <h4 className={styles.imagetitle}>
                 Want to know more in detail?
               </h4>
-              <button className={`btnPrimary ${styles.submitBtn}`}>
+              <button className={`btnPrimary ${styles.submitBtn}`} onClick={onOpenModal}>
                 Download the brochure
               </button>
             </div>
           </div>
-
           <div className={styles.formWrapper}>
             <h3 className={styles.titleTop}>Your Inquiry</h3>
             <h2 className={styles.titleMain}>OUR PRIORITY</h2>
 
             <div className={styles.inputGrid}>
-              <input type="text" placeholder="Full name *" />
-              <input type="email" placeholder="Email *" />
-              <select defaultValue="">
+              <input
+                type="text"
+                placeholder="Full name *"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className={errors.fullName ? styles.inputError : ""}
+              />
+
+              <input
+                type="email"
+                placeholder="Email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={errors.fullName ? styles.inputError : ""}
+              />
+
+              <select
+                value={interest}
+                onChange={(e) => setInterest(e.target.value)}
+              >
                 <option value="" disabled>
                   Select your interest *
                 </option>
@@ -59,7 +125,11 @@ const ContactForm = () => {
               </select>
 
               <div className={styles.phoneRow}>
-                <select className={styles.countrySelect} defaultValue="+91">
+                <select
+                  className={styles.countrySelect}
+                  value={phoneCode}
+                  onChange={(e) => setPhoneCode(e.target.value)}
+                >
                   <option value="+91">🇮🇳 +91</option>
                   <option value="+1">🇺🇸 +1</option>
                   <option value="+44">🇬🇧 +44</option>
@@ -71,10 +141,19 @@ const ContactForm = () => {
                   type="text"
                   className={styles.phoneInput}
                   placeholder="Mobile Number *"
+                  value={phone}
+                  maxLength={12}
+                  onChange={(e) => {
+                    const value = e.target.value;
+
+                    // Allow only digits
+                    if (/^\d*$/.test(value)) {
+                      setPhone(value);
+                    }
+                  }}
                 />
               </div>
             </div>
-
             <div className={styles.captchaRow} style={{ marginTop: "10px" }}>
               <div className={styles.captchaBox}>
                 <strong>
@@ -104,14 +183,12 @@ const ContactForm = () => {
             </div>
 
             {error && <p style={{ color: "red", marginTop: "5px" }}>{error}</p>}
-
             <div className={styles.checkRow}>
               <label>
                 <input type="checkbox" /> I’ve read and agree to the privacy
                 policy
               </label>
             </div>
-
             <button
               className={`btnPrimary ${styles.visitBtn}`}
               onClick={handleSubmit}

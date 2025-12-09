@@ -1,16 +1,30 @@
-.heading{
-    h2{
-        font-size: 40px;
-        padding-bottom: 5px;
-    }
+.mainSection{
+  padding: 6rem 0;
+  background: url("/assets/images/overlayBG/bgImg.png") var(--lightColor);
 }
-.para{
-    h3{
-        font-weight: bold;
-        font-size: 20px;
-        margin-top: 15px;
-    }
-    p{
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-    }
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4c1c13;
+}
+
+.heading h2 {
+    font-size: 40px;
+    padding-bottom: 5px;
+}
+
+.para h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.para p {
+    margin-top: 8px;
+    line-height: 1.6;
 }

@@ -70,7 +70,7 @@ export default function Home() {
         >
           <LocationSection onOpenModal={() => setModalOpen(true)} />
         </motion.div>
-        <PlayVidioSection />
+        <PlayVidioSection onOpenModal={() => setModalOpen(true)} />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export default function Home() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <FloorPlan onOpenModal={() => setModalOpen(true)} />
-          <ClubHouse />
+          <ClubHouse onOpenModal={() => setModalOpen(true)}  />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -86,12 +86,12 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <AmentitesScrollSection />
+          <AmentitesScrollSection onOpenModal={() => setModalOpen(true)} />
         </motion.div>
         <PriceListSection />
         <LoungeSection onOpenModal={() => setModalOpen(true)} />
         <AboutSection />
-        <ContactForm />
+        <ContactForm  onOpenModal={() => setModalOpen(true)} />
         <FooterSection />
         {modalOpen && <InquiryModal onClose={() => setModalOpen(false)} />}
       </main>

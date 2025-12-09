@@ -1,8 +1,11 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import styles from "./PlayVidioSection.module.css";
+interface VidioSection {
+  onOpenModal: () => void;
+}
 
-const PlayVidioSection = () => {
+const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
   const contentVariant: Variants = {
     hidden: { opacity: 0, y: 60 },
     show: {
@@ -65,7 +68,7 @@ const PlayVidioSection = () => {
             </div>
           </motion.div>
 
-          <div className={styles.bottomButton}>
+          <div className={styles.bottomButton} onClick={onOpenModal}>
             <motion.button
               variants={itemVariant}
               className={`btnPrimary ${styles.visitBtn}`}
