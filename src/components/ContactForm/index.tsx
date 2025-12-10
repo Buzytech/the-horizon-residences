@@ -8,8 +8,7 @@ interface FromProps {
   onOpenModal: () => void;
 }
 
-
-const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
+const ContactForm: React.FC<FromProps> = ({ onOpenModal }) => {
   const router = useRouter();
 
   const generateCaptcha = () => {
@@ -26,6 +25,7 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
   const [interest, setInterest] = useState("");
   const [phoneCode, setPhoneCode] = useState("+91");
   const [phone, setPhone] = useState("");
+
   const [errors, setErrors] = useState({
     fullName: false,
     email: false,
@@ -83,14 +83,16 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
           <div>
             <img src="/assets/images/overlayBG/form_cover.png" alt="" />
             <div>
-              <h4 className={styles.imagetitle}>
-                Want to know more in detail?
-              </h4>
-              <button className={`btnPrimary ${styles.submitBtn}`} onClick={onOpenModal}>
+              <h4 className={styles.imagetitle}>Want to know more in detail?</h4>
+              <button
+                className={`btnPrimary ${styles.submitBtn}`}
+                onClick={onOpenModal}
+              >
                 Download the brochure
               </button>
             </div>
           </div>
+
           <div className={styles.formWrapper}>
             <h3 className={styles.titleTop}>Your Inquiry</h3>
             <h2 className={styles.titleMain}>OUR PRIORITY</h2>
@@ -109,19 +111,20 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
                 placeholder="Email *"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={errors.fullName ? styles.inputError : ""}
+                className={errors.email ? styles.inputError : ""}
               />
 
               <select
                 value={interest}
                 onChange={(e) => setInterest(e.target.value)}
+                className={errors.interest ? styles.inputError : ""}
               >
                 <option value="" disabled>
                   Select your interest *
                 </option>
-                <option value="buy">Buy</option>
-                <option value="rent">Rent</option>
-                <option value="invest">Invest</option>
+                <option value="4 BHK+UTILITY">4 BHK+UTILITY (INR 5.56* CRORE)</option>
+                <option value="4.5 BHK+UTILITY">4.5 BHK+UTILITY (INR 6.31* CRORE)</option>
+                <option value="5 BHK+UTILITY">5 BHK+UTILITY (INR 7.35* CRORE)</option>
               </select>
 
               <div className={styles.phoneRow}>
@@ -139,14 +142,14 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
 
                 <input
                   type="text"
-                  className={styles.phoneInput}
+                  className={`${styles.phoneInput} ${
+                    errors.phone ? styles.inputError : ""
+                  }`}
                   placeholder="Mobile Number *"
                   value={phone}
                   maxLength={12}
                   onChange={(e) => {
                     const value = e.target.value;
-
-                    // Allow only digits
                     if (/^\d*$/.test(value)) {
                       setPhone(value);
                     }
@@ -154,6 +157,7 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
                 />
               </div>
             </div>
+
             <div className={styles.captchaRow} style={{ marginTop: "10px" }}>
               <div className={styles.captchaBox}>
                 <strong>
@@ -164,7 +168,9 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
               <input
                 type="text"
                 placeholder="Answer"
-                className={styles.captchaInput}
+                className={`${styles.captchaInput} ${
+                  errors.captcha ? styles.inputError : ""
+                }`}
                 value={captchaInput}
                 onChange={(e) => setCaptchaInput(e.target.value)}
               />
@@ -183,12 +189,13 @@ const ContactForm : React.FC<FromProps> = ({ onOpenModal }) => {
             </div>
 
             {error && <p style={{ color: "red", marginTop: "5px" }}>{error}</p>}
+
             <div className={styles.checkRow}>
               <label>
-                <input type="checkbox" /> I’ve read and agree to the privacy
-                policy
+                <input type="checkbox" /> I’ve read and agree to the privacy policy
               </label>
             </div>
+
             <button
               className={`btnPrimary ${styles.visitBtn}`}
               onClick={handleSubmit}

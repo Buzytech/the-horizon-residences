@@ -117,9 +117,9 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
                 <option value="" disabled>
                   Select your interest *
                 </option>
-                <option value="buy">Buy</option>
-                <option value="rent">Rent</option>
-                <option value="invest">Invest</option>
+           <option value="4 BHK+UTILITY">4 BHK+UTILITY (INR 5.56* CRORE)</option>
+                <option value="4.5 BHK+UTILITY">4.5 BHK+UTILITY (INR 6.31* CRORE)</option>
+                <option value="5 BHK+UTILITY">5 BHK+UTILITY (INR 7.35* CRORE)</option>
               </select>
 
               <div className={styles.phoneRow}>

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import styles from "./PlayVidioSection.module.css";
+import YoutubeModal from "@/common/youtubeModel";
 interface VidioSection {
   onOpenModal: () => void;
 }
 
 const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
+      const [modalOpenYoutube, setModalOpenYoutube] = useState(false);
   const contentVariant: Variants = {
     hidden: { opacity: 0, y: 60 },
     show: {
@@ -32,6 +34,7 @@ const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
   };
 
   return (
+    <>
     <section className={styles.mainSection}>
       <div className="horizonContainer">
         <div className={styles.imageWrapper}>
@@ -64,6 +67,7 @@ const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
                 alt="play"
                 className={styles.playButton}
                 whileHover={{ scale: 1.1 }}
+                  onClick={() => setModalOpenYoutube(true)}
               />
             </div>
           </motion.div>
@@ -81,6 +85,14 @@ const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
         </div>
       </div>
     </section>
+        {modalOpenYoutube && (
+  <YoutubeModal
+    open={modalOpenYoutube}
+    onClose={() => setModalOpenYoutube(false)}
+      videoId="zKLiOnSQpFk"
+  />
+)}
+    </>
   );
 };
 

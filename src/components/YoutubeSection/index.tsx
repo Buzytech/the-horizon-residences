@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import styles from "./youtube.module.css";
+import YoutubeModal from "@/common/youtubeModel";
 
 const YoutubeSection = ({ onOpenModal }: any) => {
+    const [modalOpenYoutube, setModalOpenYoutube] = useState(false);
   const contentVariant: Variants = {
     hidden: { opacity: 0, y: 60 },
     show: {
@@ -30,6 +32,7 @@ const YoutubeSection = ({ onOpenModal }: any) => {
   };
 
   return (
+    <>
     <section className={styles.mainSection}>
       <div className="horizonContainer">
         <div className={styles.imageWrapper}>
@@ -78,6 +81,7 @@ const YoutubeSection = ({ onOpenModal }: any) => {
               alt="play"
               className={styles.playButton}
               whileHover={{ scale: 1.1 }}
+                onClick={() => setModalOpenYoutube(true)}
             />
 
             <motion.button
@@ -93,6 +97,15 @@ const YoutubeSection = ({ onOpenModal }: any) => {
         </div>
       </div>
     </section>
+
+        {modalOpenYoutube && (
+  <YoutubeModal
+    open={modalOpenYoutube}
+    onClose={() => setModalOpenYoutube(false)}
+      videoId="MksDyh4b-Dk"
+  />
+)}
+          </>
   );
 };
 
