@@ -18,6 +18,7 @@ const ContactForm: React.FC<FromProps> = ({ onOpenModal }) => {
   };
 
   const [captcha, setCaptcha] = useState(generateCaptcha());
+  const [loading, setLoading] = useState(false);
   const [captchaInput, setCaptchaInput] = useState("");
   const [error, setError] = useState("");
   const [fullName, setFullName] = useState("");
@@ -69,11 +70,16 @@ const ContactForm: React.FC<FromProps> = ({ onOpenModal }) => {
     };
 
     try {
+       setLoading(true);
       await postFormData(body);
       router.push("/thank-you");
     } catch (err) {
       console.error(err);
+        setLoading(false); 
     }
+    finally {
+    setLoading(false); 
+  }
   };
 
   return (
@@ -200,7 +206,7 @@ const ContactForm: React.FC<FromProps> = ({ onOpenModal }) => {
               className={`btnPrimary ${styles.visitBtn}`}
               onClick={handleSubmit}
             >
-              Schedule Site Visit
+                {loading ? <div className={styles.loader}></div> : "Schedule Site Visit"}
             </button>
           </div>
         </div>
