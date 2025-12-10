@@ -9,11 +9,20 @@
 
 .imageWrapper {
   width: 100%;
+  height: 688px;
   overflow: hidden;
   position: relative;
+
+  @media screen and (min-width: 1536px) {
+    height: 880px;
+  }
+
+  .mobBannerImage{
+    display: none;
+  }
 }
 
-.bannerImage {
+.bannerImage, .mobBannerImage {
   width: 100%;
   height: auto;
   display: block;
@@ -66,9 +75,17 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .bannerImage {
+@media screen and (max-width: 768px) {
+
+  .imageWrapper {
     height: 480px;
+
+    .bannerImage {
+      display: none;
+    }
+    .mobBannerImage{
+      display: flex;
+    }
   }
 
   .fixedIcons {

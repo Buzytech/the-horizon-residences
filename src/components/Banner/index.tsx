@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Banner.module.css";
+import Image from "next/image";
 
 const Banner = () => {
   return (
@@ -7,17 +8,18 @@ const Banner = () => {
       <section id="overview" className={styles.mainBannerSection}>
         <div className={`horizonContainer ${styles.bannerContainer}`}>
           <div className={styles.imageWrapper}>
-            <picture>
-              <source
-                media="(max-width: 767px)"
-                srcSet="/assets/images/banner/mob1.jpg"
-              />
-              <img
-                src="/assets/images/banner/web1.webp"
+              <Image
+                src="/assets/images/banner/webBanner.webp"
                 alt="banner"
                 className={styles.bannerImage}
+                fill
               />
-            </picture>
+              <Image
+                  src="/assets/images/banner/mobBanner.webp"
+                  alt="banner"
+                  className={styles.mobBannerImage}
+                  fill
+                />
           </div>
         </div>
       </section>
