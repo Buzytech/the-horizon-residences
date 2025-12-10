@@ -11,7 +11,7 @@ const LoungeSection: React.FC<LocationProps> = ({ onOpenModal }) => {
       <div className="horizonContainer">
         <div className={styles.bannerWrapper}>
           <img
-            src="/assets/images/banner/lounge.png"
+            src="/assets/images/banner/loungeBanner.webp"
             alt="banner"
             className={styles.bannerImage}
           />

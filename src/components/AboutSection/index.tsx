@@ -2,6 +2,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./AboutSection.module.css";
+import Image from "next/image";
+
+const logos = [
+  {
+    src: "/assets/images/logo/cocacolalogo1.png",
+    alt: "CocaCola",
+    type: "fill",  
+    delay: 0.2,
+  },
+  {
+    src: "/assets/images/logo/genesislogo1.png",
+    alt: "Genesis",
+    type: "fill",
+    delay: 0.4,
+  },
+  {
+    src: "/assets/images/logo/horizonlogo1.png",
+    alt: "Horizon Group",
+    type: "fill",
+    delay: 0.6,
+  },
+  {
+    src: "/assets/images/logo/vgslogo1.png",
+    alt: "School",
+    type: "fill", 
+    delay: 0.8,
+  },
+  {
+    src: "/assets/images/logo/easyTigerlogo.png",
+    alt: "Easy Tiger",
+    type: "fill", 
+    delay: 1.0,
+  },
+];
 
 const AboutSection = () => {
   return (
@@ -17,7 +51,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <motion.img
-              src="/assets/images/harmonyImg.jpg"
+              src="/assets/images/banner/aboutBanner.webp"
               alt="Harmony Infra Tower"
               className={styles.mainImage}
               initial={{ scale: 1.1, opacity: 0 }}
@@ -115,6 +149,7 @@ const AboutSection = () => {
                 <img src="/assets/images/logo/genesislogo.svg" alt="Genesis" />
                 <img src="/assets/images/logo/horizonlogo.svg" alt="Horizon" />
                 <img src="/assets/images/logo/vgslogo.svg" alt="Harmony" />
+                <img src="/assets/images/logo/easyTigerlogo.png" alt="Harmony" />
               </div>
             </motion.div>
 

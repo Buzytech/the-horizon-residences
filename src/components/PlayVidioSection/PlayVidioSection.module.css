@@ -69,11 +69,15 @@
 
 .textContent {
   position: absolute;
-  left: 15%;
+  left: 8%;
   transform: translateY(-40%);
   text-align: left;
   color: white;
   z-index: 20;
+
+  @media screen and (min-width: 1536px) {
+    left: 15%;
+  }
 }
 
 
@@ -86,7 +90,7 @@
 
 .bottomButton {
   position: absolute;
-  bottom: 50px;
+  bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -103,8 +107,6 @@
   color: white;
 }
 
-
-/* Tablet View */
 @media (max-width: 768px) {
   .mainSection {
     padding-bottom: 4rem;

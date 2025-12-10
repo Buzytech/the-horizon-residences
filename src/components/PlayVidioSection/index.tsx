@@ -39,7 +39,7 @@ const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
       <div className="horizonContainer">
         <div className={styles.imageWrapper}>
           <img
-            src="/assets/images/banner/youtube2image.png"
+            src="/assets/images/banner/youtubeBannerImg2.webp"
             alt="banner"
             className={styles.bannerImage}
           />
@@ -71,7 +71,6 @@ const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
               />
             </div>
           </motion.div>
-
           <div className={styles.bottomButton} onClick={onOpenModal}>
             <motion.button
               variants={itemVariant}
@@ -82,6 +81,7 @@ const PlayVidioSection : React.FC<VidioSection> = ({ onOpenModal }) => {
               Schedule Site Visit
             </motion.button>
           </div>
+
         </div>
       </div>
     </section>

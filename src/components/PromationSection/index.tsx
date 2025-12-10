@@ -10,25 +10,25 @@ interface promationsProps {
 
 const logos = [
   {
-    src: "/assets/images/logo/cocacolalogo.png",
+    src: "/assets/images/logo/cocacolalogo1.png",
     alt: "CocaCola",
     type: "fill",  
     delay: 0.2,
   },
   {
-    src: "/assets/images/logo/genesislogo.png",
+    src: "/assets/images/logo/genesislogo1.png",
     alt: "Genesis",
     type: "fill",
     delay: 0.4,
   },
   {
-    src: "/assets/images/logo/horizonlogo.png",
+    src: "/assets/images/logo/horizonlogo1.png",
     alt: "Horizon Group",
     type: "fill",
     delay: 0.6,
   },
   {
-    src: "/assets/images/logo/vgslogo.png",
+    src: "/assets/images/logo/vgslogo1.png",
     alt: "School",
     type: "fill", 
     delay: 0.8,

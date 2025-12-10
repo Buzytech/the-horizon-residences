@@ -37,7 +37,7 @@ const YoutubeSection = ({ onOpenModal }: any) => {
       <div className="horizonContainer">
         <div className={styles.imageWrapper}>
           <img
-            src="/assets/images/banner/bannerImg.webp"
+            src="/assets/images/banner/youtubeBannerImg1.webp"
             alt="banner"
             className={styles.bannerImage}
           />
