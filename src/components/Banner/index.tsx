@@ -7,15 +7,15 @@ const Banner = () => {
     <>
       <section id="overview" className={styles.mainBannerSection}>
         <div className={`horizonContainer ${styles.bannerContainer}`}>
-          <div className={styles.imageWrapper}>
+          <div className={styles.imageWrapperHorizon}>
               <Image
-                src="/assets/images/banner/webBanner.webp"
+                src="/assets/images/banner/webBannerHorizon.webp"
                 alt="banner"
                 className={styles.bannerImage}
                 fill
               />
               <Image
-                  src="/assets/images/banner/mobBanner.webp"
+                  src="/assets/images/banner/mobBannerHorizon.webp"
                   alt="banner"
                   className={styles.mobBannerImage}
                   fill
