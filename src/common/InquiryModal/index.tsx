@@ -16,7 +16,7 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
 
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [interest, setInterest] = useState("");
@@ -67,11 +67,16 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
     };
 
     try {
+       setLoading(true);
       await postFormData(body);
       router.push("/thank-you");
     } catch (err) {
       console.error(err);
+       setLoading(false);
     }
+     finally {
+    setLoading(false); 
+  }
   };
 
   return (
@@ -188,7 +193,7 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
             </label>
 
             <button type="submit" className={styles.submitBtn}>
-              SUBMIT
+              {loading ? <div className={styles.loader}></div> : "Schedule Site Visit"}
             </button>
           </form>
         </div>
