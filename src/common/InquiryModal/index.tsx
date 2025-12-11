@@ -83,7 +83,7 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.left}>
-          <img src="/assets/images/banner/about.jpg" alt="Horizon Residences" />
+          <img src="/assets/images/banner/aboutBanner.webp" alt="Horizon Residences" />
         </div>
 
         <div className={styles.right}>
