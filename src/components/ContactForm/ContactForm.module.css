@@ -7,20 +7,26 @@
 
 .flexWrapper {
   display: flex;
-  gap: 7rem;
-  align-items: stretch; 
+  gap: 4rem;
+
+  @media screen and (min-width: 1536px) {
+    gap: 7rem;
+  }
 }
-.formWrapper {
-  max-width: 1024px;
- 
+.formWrapper, .imageWrapper {
+  flex: 1;
+  width: 50%;
 }
 .titleTop {
-  font-size: 58px;
+  font-size: 36px;
   line-height: 100%;
   font-family: var(--fontEnglish157);
   font-weight: 400;
   margin-bottom: 20px;
   color: var(--lightColor);
+  @media screen and (min-width: 1536px) {
+    font-size: 58px;
+  }
 }
 
 .imagetitle{
@@ -33,22 +39,28 @@
 }
 
 .titleMain {
-  font-size: 68px;
+  font-size: 42px;
   line-height: 100%;
   font-family: var(--fontePrpetuaMT);
   margin-bottom: 3rem;
   letter-spacing: 2px;
-    color: var(--lightColor);
+  color: var(--lightColor);
+
+  @media screen and (min-width: 1536px) {
+    font-size: 68px;
+  }
+
 }
 
 .inputGrid {
-  display: grid;
-  gap: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
 .inputGrid input {
-    width: 35rem;  
+  width: auto;  
   padding: 0.8rem 1rem;
   background: transparent;
   border: 1px solid var(--lightColor);
@@ -58,7 +70,7 @@
 }
 
 .inputGrid select {
-  width: 100%;
+  width: auto;
   padding: 0.8rem 1rem;
   background: #fff;
   border: 1px solid var(--lightColor);
@@ -79,7 +91,7 @@
 .phoneRow {
   display: flex;
   gap: 1rem;
-  width: 35rem;
+  width: auto;
 }
 
 .countrySelect {
@@ -155,6 +167,7 @@
   min-width: 150px;
   text-align: center;
   border: 1px solid #ddd;
+  font-weight: bold;
 }
 
 .captchaInput {

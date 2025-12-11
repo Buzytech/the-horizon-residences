@@ -5,8 +5,18 @@ const Terms = () => {
   return (
     <section className={styles.mainSection}>
       <div className='horizonContainer'>
+        <div className={styles.header}>
+            <div className={styles.logoArea}>
+              <a href='/'>
+                <img src="/assets/images/logo/logo.svg" alt="logo" />
+              </a>
+            </div>
+            <div className={styles.headingArea}>
+              <h1>Terms and Conditions</h1>
+            </div>
+          </div>
         <div  className={styles.header}>
-          <h1>Terms and Conditions</h1>
+          <h1></h1>
         </div>
 
         <div className={styles.para}>

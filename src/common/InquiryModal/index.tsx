@@ -156,9 +156,7 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
 
             <div className={styles.captchaRow}>
               <div className={styles.captchaBox}>
-                <strong>
                   {captcha.a} + {captcha.b} =
-                </strong>
               </div>
 
               <input
@@ -187,10 +185,10 @@ const InquiryModal = ({ onClose }: { onClose: () => void }) => {
               I've read and agree to the privacy policy
             </label>
 
-            <label className={styles.checkbox}>
+            {/* <label className={styles.checkbox}>
               <input type="checkbox" />
               I'd like to hear about news and offers
-            </label>
+            </label> */}
 
             <button type="submit" className={styles.submitBtn}>
               {loading ? <div className={styles.loader}></div> : "Schedule Site Visit"}

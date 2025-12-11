@@ -86,7 +86,7 @@ const ContactForm: React.FC<FromProps> = ({ onOpenModal }) => {
     <section className={styles.mainSection}>
       <div className="horizonContainer">
         <div className={styles.flexWrapper}>
-          <div>
+          <div className={styles.imageWrapper}>
             <img src="/assets/images/overlayBG/form_cover.png" alt="" />
             <div>
               <h4 className={styles.imagetitle}>Want to know more in detail?</h4>
@@ -166,9 +166,7 @@ const ContactForm: React.FC<FromProps> = ({ onOpenModal }) => {
 
             <div className={styles.captchaRow} style={{ marginTop: "10px" }}>
               <div className={styles.captchaBox}>
-                <strong>
                   {captcha.a} + {captcha.b} =
-                </strong>
               </div>
 
               <input

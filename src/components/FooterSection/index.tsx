@@ -38,7 +38,7 @@ const FooterSection = () => {
           </div>
         </div>
         <div className={styles.addressBox}>
-          Click below the address to Locate our Sales Lounge <br />
+          Follow the below address to Locate our Sales Lounge <br />
           <span>
             Plot No. 10/2, Vaibhav Khand, Indirapuram, Ghaziabad, Uttar Pradesh
             201014

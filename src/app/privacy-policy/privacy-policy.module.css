@@ -1,13 +1,14 @@
-
-
 .mainSection{
   padding: 6rem 0;
   background: url("/assets/images/overlayBG/bgImg.png") var(--lightColor);
 }
-
 .header {
-  text-align: center;
+  display: flex;
   margin-bottom: 40px;
+
+  .logoArea{
+    width: 40%;
+  }
 }
 
 .header h1 {

@@ -73,10 +73,14 @@ font-weight: 400;
 
 .statsHeading {
   font-family: var(--fontGilroyBold);
-  font-size: 48px;
+  font-size: 36px;
   line-height: 100%;
   text-transform: uppercase;
   color: var(--chestnutBrown);
+
+  @media screen and (min-width: 1536px) {
+    font-size: 48px;
+  }
 
   span {
     color:var(--primaryBlue);
@@ -102,13 +106,21 @@ gap: 1rem;
 }
 
 .iconItem img {
-  height: auto;
+  height: 40px;
+
+  @media screen and (min-width: 1536px) {
+    height: auto;
+  }
 }
 
-.iconItem p {
-  font-size: 18px;
+.itemLabel{
+  font-size: 16px;
   color: var(--chestnutBrown);
   font-family: var(--fontGilroyBold);
+
+  @media screen and (min-width: 1536px) {
+    font-size: 18px;
+  }
 }
 
 

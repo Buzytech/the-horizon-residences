@@ -8,7 +8,7 @@ const logos = [
   {
     src: "/assets/images/logo/cocacolalogo1.png",
     alt: "CocaCola",
-    type: "fill",  
+    type: "fill",
     delay: 0.2,
   },
   {
@@ -26,15 +26,23 @@ const logos = [
   {
     src: "/assets/images/logo/vgslogo1.png",
     alt: "School",
-    type: "fill", 
+    type: "fill",
     delay: 0.8,
   },
   {
     src: "/assets/images/logo/easyTigerlogo.png",
     alt: "Easy Tiger",
-    type: "fill", 
+    type: "fill",
     delay: 1.0,
   },
+];
+
+const iconItems = [
+  { icon: "/assets/images/icons/residential.svg", label: "RESIDENTIAL" },
+  { icon: "/assets/images/icons/fmcg.svg", label: "EDUCATION" },
+  { icon: "/assets/images/icons/education.svg", label: "FMCG" },
+  { icon: "/assets/images/icons/hospital.svg", label: "F&B" },
+  { icon: "/assets/images/icons/cook.svg", label: "HOSPITAL" },
 ];
 
 const AboutSection = () => {
@@ -108,30 +116,12 @@ const AboutSection = () => {
               </h3>
 
               <div className={styles.iconGrid}>
-                <div className={styles.iconItem}>
-                  <img src="/assets/images/icons/residential.svg" alt="" />
-                  <p>RESIDENTIAL</p>
-                </div>
-
-                <div className={styles.iconItem}>
-                  <img src="/assets/images/icons/fmcg.svg" alt="" />
-                  <p>EDUCATION</p>
-                </div>
-
-                <div className={styles.iconItem}>
-                  <img src="/assets/images/icons/education.svg" alt="" />
-                  <p>FMCG</p>
-                </div>
-
-                <div className={styles.iconItem}>
-                  <img src="/assets/images/icons/hospital.svg" alt="" />
-                  <p>F&B</p>
-                </div>
-
-                <div className={styles.iconItem}>
-                  <img src="/assets/images/icons/cook.svg" alt="" />
-                  <p>HOSPITAL</p>
-                </div>
+                {iconItems.map((item, index) => (
+                  <div className={styles.iconItem} key={index}>
+                    <img src={item.icon} alt={item.label} />
+                    <div className={styles.itemLabel}>{item.label}</div>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
