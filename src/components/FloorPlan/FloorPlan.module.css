@@ -220,10 +220,7 @@
     padding: 0 20px;
 
     .visitBtn {
-      width: 100%;
-      max-width: 300px;
-      padding: 12px 24px;
-      font-size: 14px;
+      font-size: 0.8rem;
     }
   }
 }
@@ -273,10 +270,5 @@
   .btnTextArea {
     margin: 2rem 0 0;
 
-    .visitBtn {
-      max-width: 260px;
-      padding: 10px 20px;
-      font-size: 13px;
-    }
   }
 }

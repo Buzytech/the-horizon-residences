@@ -144,7 +144,15 @@
 
   .bottomButton {
     bottom: 30px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
+
+    .visitBtn {
+    font-size: 0.8rem;
+    }
 }
 
 /* Mobile View */
@@ -195,18 +203,6 @@
     width: 70px;
   }
 
-  .bottomButton {
-    bottom: 20px;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .visitBtn {
-    width: 100%;
-    padding: 12px 20px;
-    font-size: 14px;
-  }
 }
 
 /* Extra Small Mobile */

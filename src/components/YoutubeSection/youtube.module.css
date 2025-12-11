@@ -126,7 +126,12 @@
   .mainSection {
     padding-bottom: 3rem;
   }
-
+  .designBy{
+    font-size: 1rem;
+  }
+  .line{
+    display: none;
+  }
   .bannerContainer {
     width: 100%;
   }
@@ -165,10 +170,9 @@
       }
 
       .visitBtn {
-        width: 100%;
-        max-width: 280px;
-        padding: 12px 24px;
-        font-size: 14px;
+        font-size: 0.8rem;
+        position: absolute;
+        bottom: 30px;
       }
     }
   }
@@ -202,11 +206,6 @@
         width: 50px;
       }
 
-      .visitBtn {
-        max-width: 240px;
-        padding: 10px 20px;
-        font-size: 13px;
-      }
     }
   }
 }

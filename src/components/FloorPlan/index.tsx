@@ -77,27 +77,6 @@ const FloorPlan: React.FC<FloorProps> = ({ onOpenModal }) => {
     <section id="unitPlan" className={styles.mainSection}>
       <h2 className={styles.heading}>UNIT PLAN</h2>
 
-      {/* <div className={styles.tabsContainer}>
-        <div
-          className={`${styles.tab} ${
-            active === "tower1" ? styles.active : ""
-          }`}
-          onClick={() => setActive("tower1")}
-        >
-          TOWER 1 UNIT PLANS
-        </div>
-
-        <span className={styles.divider}>|</span>
-
-        <div
-          className={`${styles.tab} ${
-            active === "tower23" ? styles.active : ""
-          }`}
-          onClick={() => setActive("tower23")}
-        >
-          TOWER 2 & 3 UNIT PLANS
-        </div>
-      </div> */}
       <div className={styles.carouselContainer}>
         <button
           className={`${styles.arrowBtn} ${styles.left}`}
