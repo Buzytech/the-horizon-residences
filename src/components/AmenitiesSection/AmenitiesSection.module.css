@@ -20,9 +20,13 @@
     }
     .heading {
       font-family: var(--fontTimesI);
-      font-size: 64px;
+      font-size: 48px;
       font-weight: 300;
       line-height: 100%;
+
+      @media screen and (min-width: 1536px) {
+        font-size:  64px;
+      }
     }
   }
   .tabs {
