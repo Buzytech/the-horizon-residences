@@ -19,6 +19,8 @@ interface FormField {
 
 const StrategicPartnerPage = () => {
   const [fromInputDynamic, setFromInputDynamic] = useState<FormField[]>([]);
+  console.log(fromInputDynamic, 'fromInputDynamic:::::::::::::');
+
   const [formValues, setFormValues] = useState<any>({});
   const [errors, setErrors] = useState<any>({});
 
@@ -147,7 +149,7 @@ const StrategicPartnerPage = () => {
   };
 
   return (
-    <div>
+    <>
       <div className={styles.row}>
         <div className={styles.leftImage}>
           <img src="assets/images/banner/frombanner.webp" alt="" />
@@ -175,19 +177,42 @@ const StrategicPartnerPage = () => {
                     {field.required && <span style={{ color: "red" }}>*</span>}
                   </label>
 
-                  {field.type !== "checkbox" && (
+                  {field.label === "Mobile No." && (
+                    <div className={styles.phoneWrapper}>
+                      <span className={styles.phonePrefix}>+91</span>
+                      <input
+                        type="text"
+                        className={styles.phoneInput}
+                        required={field.required}
+                        maxLength={10}
+                        onChange={(e) => {
+                          const onlyNumbers = e.target.value.replace(/[^0-9]/g, "");
+                          handleChange(field.label, onlyNumbers);
+                        }}
+                      />
+                    </div>
+                  )}
+
+                  {/* ALL OTHER NON-CHECKBOX FIELDS */}
+                  {field.type !== "checkbox" && field.label !== "Mobile No." && (
                     <input
                       type={field.type === "phone" ? "text" : field.type}
                       className={`${styles.dottedInput} ${
                         errors[field.label] ? styles.inputError : ""
                       }`}
                       required={field.required}
+                      maxLength={
+                        field.label === "RERA No."
+                          ? 25
+                          : undefined
+                      }
                       onChange={(e) =>
                         handleChange(field.label, e.target.value)
                       }
                     />
                   )}
 
+                  {/* CHECKBOX FIELDS */}
                   {field.type === "checkbox" && (
                     <div className={`${styles.checkboxGroup} ${
                       errors[field.label] ? styles.checkboxError : ""
@@ -208,6 +233,7 @@ const StrategicPartnerPage = () => {
                   )}
                 </div>
               ))}
+
 
               <div className={styles.submitRow}>
                 <button className={styles.submitBtn} onClick={handleSubmit}>
@@ -240,7 +266,8 @@ const StrategicPartnerPage = () => {
           INDIA, 201306
         </p>
       </div>
-    </div>
+      </>
+   
   );
 };
 
