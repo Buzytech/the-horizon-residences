@@ -44,12 +44,31 @@ const StrategicPartnerPage = () => {
     }));
   };
 
-  const handleCheckbox = (fieldId: string, option: string) => {
+  const handleCheckbox = (label: string, option: string) => {
     setFormValues((prev: any) => {
-      const list = prev[fieldId] || [];
+      let updated = { ...prev };
+      let current = prev[label] || [];
+
+      if (label === "Expertised in:") {
+        if (option === "Both") {
+          updated[label] = ["Residential", "Commercial", "Both"];
+          return updated;
+        }
+        const other = option === "Residential" ? "Commercial" : "Residential";
+        const isChecked = current.includes(option);
+
+        if (isChecked) {
+          updated[label] = current.filter((v: string) => v !== option);
+        } else {
+          updated[label] = [option];
+        }
+        updated[label] = updated[label].filter((v: string) => v !== "Both");
+        return updated;
+      }
+      const list = prev[label] || [];
       return list.includes(option)
-        ? { ...prev, [fieldId]: list.filter((x: string) => x !== option) }
-        : { ...prev, [fieldId]: [...list, option] };
+        ? { ...prev, [label]: list.filter((x: string) => x !== option) }
+        : { ...prev, [label]: [...list, option] };
     });
   };
 
@@ -65,9 +84,9 @@ const StrategicPartnerPage = () => {
       const res = await postFormDataFoxSuit(payload);
       console.log("API Success:", res);
 
-  CustomeToast.success("Form submitted successfully!");
-     
-      setFormValues({});                             
+      CustomeToast.success("Form submitted successfully!");
+
+      setFormValues({});
       const inputs = document.querySelectorAll("input");
       inputs.forEach((input: any) => {
         if (input.type === "checkbox") {
@@ -76,7 +95,6 @@ const StrategicPartnerPage = () => {
           input.value = "";
         }
       });
-
     } catch (error) {
       console.error("API Error:", error);
       toast.error("Something went wrong!");
@@ -92,9 +110,7 @@ const StrategicPartnerPage = () => {
         />
       </div>
 
-      <div className={styles.headerBar}>
-        Strategic Partner Empanelment Form
-      </div>
+      <div className={styles.headerBar}>Strategic Partner Empanelment Form</div>
 
       <div className={styles.formWrapper}>
         <div className={styles.formContent}>
@@ -112,9 +128,7 @@ const StrategicPartnerPage = () => {
                   type={field.type === "phone" ? "text" : field.type}
                   className={styles.dottedInput}
                   required={field.required}
-                  onChange={(e) =>
-                    handleChange(field.label, e.target.value)
-                  }
+                  onChange={(e) => handleChange(field.label, e.target.value)}
                 />
               )}
 
@@ -124,10 +138,10 @@ const StrategicPartnerPage = () => {
                     <label key={idx}>
                       <input
                         type="checkbox"
-                        value={opt}
-                        onChange={() =>
-                          handleCheckbox(field.label, opt)
+                        checked={
+                          formValues[field.label]?.includes(opt) || false
                         }
+                        onChange={() => handleCheckbox(field.label, opt)}
                       />
                       {opt}
                     </label>
@@ -150,20 +164,20 @@ const StrategicPartnerPage = () => {
         <p>CIN: U45400DL2007PTC167361</p>
 
         <p>
-          <strong>SITE ADDRESS:</strong> 10/2, AT 10 VAIBHAV KHAND,
-          INDIRAPURAM, GHAZIABAD, UTTAR PRADESH, 201014
+          <strong>SITE ADDRESS:</strong> 10/2, AT 10 VAIBHAV KHAND, INDIRAPURAM,
+          GHAZIABAD, UTTAR PRADESH, 201014
         </p>
 
         <p>
-          <strong>REGISTERED ADDRESS:</strong> 2-A/3, S/F FRONT SIDE,
-          KUNDAN MANSION ASAF ALI ROAD TURKMAN GATE, DARYA GANJ,
-          CENTRAL DELHI, NEW DELHI, DELHI, INDIA, 110002
+          <strong>REGISTERED ADDRESS:</strong> 2-A/3, S/F FRONT SIDE, KUNDAN
+          MANSION ASAF ALI ROAD TURKMAN GATE, DARYA GANJ, CENTRAL DELHI, NEW
+          DELHI, DELHI, INDIA, 110002
         </p>
 
         <p>
-          <strong>CORPORATE ADDRESS:</strong> PLOT NO C01 SECTOR 12,
-          ECOTECH III GREATER NOIDA, BISRAKH, GAUTAM BUDDHA NAGAR,
-          BISRAKH, UTTAR PRADESH, INDIA, 201306
+          <strong>CORPORATE ADDRESS:</strong> PLOT NO C01 SECTOR 12, ECOTECH III
+          GREATER NOIDA, BISRAKH, GAUTAM BUDDHA NAGAR, BISRAKH, UTTAR PRADESH,
+          INDIA, 201306
         </p>
       </div>
     </div>
