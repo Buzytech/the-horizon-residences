@@ -21,9 +21,6 @@ const StrategicPartnerPage = () => {
   const [fromInputDynamic, setFromInputDynamic] = useState<FormField[]>([]);
   const [formValues, setFormValues] = useState<any>({});
 
-  console.log(fromInputDynamic, "fromInputDynamic::::::::::::::::::::::::");
-  console.log(formValues, "formValuesformValues:::::::::::::::::::::::");
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -102,59 +99,70 @@ const StrategicPartnerPage = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.logoBox}>
-        <img
-          src="/assets/images/icons/partnerlogo.png"
-          alt="Horizon Residences"
-        />
-      </div>
+    <div>
+      <div className={styles.row}>
+        <div className={styles.leftImage}>
+          <img src="assets/images/banner/frombanner.webp" alt="" />
+        </div>
+        <div className={styles.rightForm}>
+          <div className={styles.logoBox}>
+            <img
+              src="/assets/images/icons/partnerlogo.png"
+              alt="Horizon Residences"
+            />
+          </div>
 
-      <div className={styles.headerBar}>Strategic Partner Empanelment Form</div>
+          <div className={styles.headerBar}>
+            Strategic Partner Empanelment Form
+          </div>
 
-      <div className={styles.formWrapper}>
-        <div className={styles.formContent}>
-          <h3 className={styles.formTitle}>Personal Information</h3>
+          <div className={styles.formWrapper}>
+            <div className={styles.formContent}>
+              <h3 className={styles.formTitle}>Personal Information</h3>
 
-          {fromInputDynamic?.map((field) => (
-            <div key={field._id} className={styles.field}>
-              <label>
-                {field.label}{" "}
-                {field.required && <span style={{ color: "red" }}>*</span>}
-              </label>
+              {fromInputDynamic?.map((field) => (
+                <div key={field._id} className={styles.field}>
+                  <label>
+                    {field.label}{" "}
+                    {field.required && <span style={{ color: "red" }}>*</span>}
+                  </label>
 
-              {field.type !== "checkbox" && (
-                <input
-                  type={field.type === "phone" ? "text" : field.type}
-                  className={styles.dottedInput}
-                  required={field.required}
-                  onChange={(e) => handleChange(field.label, e.target.value)}
-                />
-              )}
+                  {field.type !== "checkbox" && (
+                    <input
+                      type={field.type === "phone" ? "text" : field.type}
+                      className={styles.dottedInput}
+                      required={field.required}
+                      onChange={(e) =>
+                        handleChange(field.label, e.target.value)
+                      }
+                    />
+                  )}
 
-              {field.type === "checkbox" && (
-                <div className={styles.checkboxGroup}>
-                  {field.options?.map((opt, idx) => (
-                    <label key={idx}>
-                      <input
-                        type="checkbox"
-                        checked={
-                          formValues[field.label]?.includes(opt) || false
-                        }
-                        onChange={() => handleCheckbox(field.label, opt)}
-                      />
-                      {opt}
-                    </label>
-                  ))}
+                  {field.type === "checkbox" && (
+                    <div className={styles.checkboxGroup}>
+                      {field.options?.map((opt, idx) => (
+                        <label key={idx}>
+                          <input
+                            type="checkbox"
+                            checked={
+                              formValues[field.label]?.includes(opt) || false
+                            }
+                            onChange={() => handleCheckbox(field.label, opt)}
+                          />
+                          {opt}
+                        </label>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              ))}
 
-          <div className={styles.submitRow}>
-            <button className={styles.submitBtn} onClick={handleSubmit}>
-              Submit
-            </button>
+              <div className={styles.submitRow}>
+                <button className={styles.submitBtn} onClick={handleSubmit}>
+                  Submit
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

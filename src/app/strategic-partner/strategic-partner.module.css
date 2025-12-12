@@ -1,9 +1,16 @@
-.container {
-  width: 100%;
-  max-width: 850px;
-  margin: auto;
-  font-family: "Poppins", sans-serif;
-  padding-bottom: 40px;
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 50px;
+}
+
+.leftImage {
+  width: 50%;
+}
+.rightForm {
+  width: 50%;
 }
 
 .logoBox {
@@ -53,16 +60,17 @@
 
 .field {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 18px;
+  width: 100%;
 }
 
 .field label {
-  width: 180px;
+  margin-bottom: 20px;
   font-size: 15px;
   font-weight: 500;
 }
-
 .dottedInput {
   flex: 1;
   border: none;
@@ -72,6 +80,7 @@
   background: transparent;
   outline: none;
   font-size: 14px;
+  width: 100%;
 }
 
 .dottedInput:focus {
@@ -116,7 +125,7 @@
 .checkboxGroup label {
   display: flex;
   align-items: center;
-  gap: 12px; 
+  gap: 12px;
   font-size: 16px;
   cursor: pointer;
 }
