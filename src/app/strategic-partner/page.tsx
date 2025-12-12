@@ -20,6 +20,7 @@ interface FormField {
 const StrategicPartnerPage = () => {
   const [fromInputDynamic, setFromInputDynamic] = useState<FormField[]>([]);
   const [formValues, setFormValues] = useState<any>({});
+  const [errors, setErrors] = useState<any>({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +40,13 @@ const StrategicPartnerPage = () => {
       ...prev,
       [label]: value,
     }));
+  
+    if (errors[label]) {
+      setErrors((prev: any) => ({
+        ...prev,
+        [label]: false,
+      }));
+    }
   };
 
   const handleCheckbox = (label: string, option: string) => {
@@ -67,9 +75,48 @@ const StrategicPartnerPage = () => {
         ? { ...prev, [label]: list.filter((x: string) => x !== option) }
         : { ...prev, [label]: [...list, option] };
     });
+    
+
+    if (errors[label]) {
+      setErrors((prev: any) => ({
+        ...prev,
+        [label]: false,
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: any = {};
+    let isValid = true;
+
+    fromInputDynamic.forEach((field) => {
+      if (field.required) {
+        const value = formValues[field.label];
+        
+        if (field.type === "checkbox") {
+          if (!value || value.length === 0) {
+            newErrors[field.label] = true;
+            isValid = false;
+          }
+        } else {
+          if (!value || value.trim() === "") {
+            newErrors[field.label] = true;
+            isValid = false;
+          }
+        }
+      }
+    });
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = async () => {
+    if (!validateForm()) {
+        // CustomeToast.info("Please fill all required fields !");
+      return;
+    }
+
     const payload = {
       customerId: "693a7de66a1489a0d2970554",
       formId: "693ac061ed711e673fd670ae",
@@ -84,6 +131,7 @@ const StrategicPartnerPage = () => {
       CustomeToast.success("Form submitted successfully!");
 
       setFormValues({});
+      setErrors({});
       const inputs = document.querySelectorAll("input");
       inputs.forEach((input: any) => {
         if (input.type === "checkbox") {
@@ -130,7 +178,9 @@ const StrategicPartnerPage = () => {
                   {field.type !== "checkbox" && (
                     <input
                       type={field.type === "phone" ? "text" : field.type}
-                      className={styles.dottedInput}
+                      className={`${styles.dottedInput} ${
+                        errors[field.label] ? styles.inputError : ""
+                      }`}
                       required={field.required}
                       onChange={(e) =>
                         handleChange(field.label, e.target.value)
@@ -139,7 +189,9 @@ const StrategicPartnerPage = () => {
                   )}
 
                   {field.type === "checkbox" && (
-                    <div className={styles.checkboxGroup}>
+                    <div className={`${styles.checkboxGroup} ${
+                      errors[field.label] ? styles.checkboxError : ""
+                    }`}>
                       {field.options?.map((opt, idx) => (
                         <label key={idx}>
                           <input

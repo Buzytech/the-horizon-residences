@@ -9,7 +9,7 @@ const CustomeToast = {
       icon: "success",
       title: message,
       showConfirmButton: false,
-      timer: 2500,
+      timer: 4000,
       html: logo
         ? `<img src="${logo}" style="width:80px;height:80px;margin-bottom:15px;" /> <h2>${message}</h2>`
         : undefined,
@@ -22,7 +22,7 @@ const CustomeToast = {
       icon: "error",
       title: message,
       showConfirmButton: false,
-      timer: 2500,
+       timer: 4000,
       html: logo
         ? `<img src="${logo}" style="width:80px;height:80px;margin-bottom:15px;" /> <h2>${message}</h2>`
         : undefined,
@@ -35,7 +35,7 @@ const CustomeToast = {
       icon: "info",
       title: message,
       showConfirmButton: false,
-      timer: 2500,
+      timer: 4000,
       html: logo
         ? `<img src="${logo}" style="width:80px;height:80px;margin-bottom:15px;" /> <h2>${message}</h2>`
         : undefined,
