@@ -134,15 +134,23 @@
 
     .grid {
       display: grid;
+
+      /* 2 rows */
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns:max-content;
+
+      /* each column is 3 cards wide */
       grid-auto-flow: column;
-      grid-auto-columns: 33.33%;
-      overflow-x: auto;
-      overflow-y: hidden;
+      grid-auto-columns: calc(100% / 3);
+
       gap: 20px;
       padding: 10px 20px;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
-      grid-template-columns: none; 
     }
 
     .grid::-webkit-scrollbar {
@@ -202,24 +210,6 @@
         padding: 0.4rem 1.2rem;
         font-size: 0.75rem;
       }
-    }
-
-
-    .grid {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 33.33%;
-      overflow-x: auto;
-      overflow-y: hidden;
-      gap: 20px;
-      padding: 10px 20px;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      grid-template-columns: none; 
-    }
-
-    .grid::-webkit-scrollbar {
-      display: none;
     }
 
     .card {
