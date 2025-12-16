@@ -31,8 +31,8 @@ const ThankYou = () => {
         </div>
 
         <div>
-          <Link href="/" className={styles.backBtn}>
-            <span>←</span> Go Back To Home
+          <Link href="/strategic-partner" className={styles.backBtn}>
+            <span>←</span> Go Back
           </Link>
         </div>
       </div>

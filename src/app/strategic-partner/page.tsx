@@ -19,7 +19,7 @@ interface FormField {
 }
 
 const StrategicPartnerPage = () => {
-    const router = useRouter();
+  const router = useRouter();
   const [fromInputDynamic, setFromInputDynamic] = useState<FormField[]>([]);
   const [formValues, setFormValues] = useState<any>({});
   const [errors, setErrors] = useState<any>({});
@@ -48,19 +48,13 @@ const StrategicPartnerPage = () => {
       label.toLowerCase().includes("mobile") ||
       label.toLowerCase().includes("phone")
     ) {
-      updatedValue = value
-        .replace(/\D/g, "") 
-        .slice(0, 10); 
+      updatedValue = value.replace(/\D/g, "").slice(0, 10);
     }
 
     setFormValues((prev: any) => ({
       ...prev,
       [label]: updatedValue,
     }));
-    // setFormValues((prev: any) => ({
-    //   ...prev,
-    //   [label]: value,
-    // }));
 
     if (errors[label]) {
       setErrors((prev: any) => ({
@@ -125,6 +119,27 @@ const StrategicPartnerPage = () => {
           }
         }
       }
+
+      // Email validation
+      if (field.label.toLowerCase().includes("email")) {
+        const emailValue = formValues[field.label];
+        if (emailValue) {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(emailValue)) {
+            newErrors[field.label] = "Please enter a valid email address";
+            isValid = false;
+          }
+        }
+      }
+
+      // Mobile number validation - must be exactly 10 digits
+      if (field.label === "Mobile No.") {
+        const mobile = formValues[field.label];
+        if (mobile && mobile.length < 10) {
+          newErrors[field.label] = "Mobile number must be 10 digits";
+          isValid = false;
+        }
+      }
     });
 
     setErrors(newErrors);
@@ -133,7 +148,7 @@ const StrategicPartnerPage = () => {
 
   const handleSubmit = async () => {
     if (!validateForm()) {
-
+      toast.error("Please fix the errors in the form");
       return;
     }
 
@@ -156,8 +171,8 @@ const StrategicPartnerPage = () => {
         } else {
           input.value = "";
         }
-        router.push("/partner-thank-you");
       });
+      router.push("/strategic-partner/partner-thank-you");
     } catch (error) {
       console.error("API Error:", error);
       toast.error("Something went wrong!");
@@ -194,37 +209,57 @@ const StrategicPartnerPage = () => {
                   </label>
 
                   {field.label === "Mobile No." && (
-                    <div className={styles.phoneWrapper}>
-                      <span className={styles.phonePrefix}>+91</span>
-                      <input
-                        type="tel"
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                        className={styles.phoneInput}
-                        required={field.required}
-                        maxLength={10}
-                        onChange={(e) => {
-                          const onlyNumbers = e.target.value.replace(/\D/g, "");
-                          e.target.value = onlyNumbers;
-                          handleChange(field.label, onlyNumbers);
-                        }}
-                      />
-                    </div>
+                    <>
+                      <div className={styles.phoneWrapper}>
+                        <span className={styles.phonePrefix}>+91</span>
+                        <input
+                          type="tel"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
+                          className={styles.phoneInput}
+                          required={field.required}
+                          maxLength={10}
+                          onChange={(e) => {
+                            const onlyNumbers = e.target.value.replace(
+                              /\D/g,
+                              ""
+                            );
+                            e.target.value = onlyNumbers;
+                            handleChange(field.label, onlyNumbers);
+                          }}
+                        />
+                      </div>
+                      {errors[field.label] && (
+                        <span style={{ color: "red", fontSize: "12px" }}>
+                          {errors[field.label]}
+                        </span>
+                      )}
+                    </>
                   )}
 
                   {field.type !== "checkbox" &&
                     field.label !== "Mobile No." && (
-                      <input
-                        type={field.type === "phone" ? "digits" : field.type}
-                        className={`${styles.dottedInput} ${
-                          errors[field.label] ? styles.inputError : ""
-                        }`}
-                        required={field.required}
-                        maxLength={field.label === "RERA No." ? 25 : undefined}
-                        onChange={(e) =>
-                          handleChange(field.label, e.target.value)
-                        }
-                      />
+                      <>
+                        <input
+                          type={field.type === "phone" ? "digits" : field.type}
+                          className={`${styles.dottedInput} ${
+                            errors[field.label] ? styles.inputError : ""
+                          }`}
+                          required={field.required}
+                          maxLength={
+                            field.label === "RERA No." ? 25 : undefined
+                          }
+                          onChange={(e) =>
+                            handleChange(field.label, e.target.value)
+                          }
+                        />
+                        {errors[field.label] &&
+                          typeof errors[field.label] === "string" && (
+                            <span style={{ color: "red", fontSize: "12px" }}>
+                              {errors[field.label]}
+                            </span>
+                          )}
+                      </>
                     )}
 
                   {/* CHECKBOX FIELDS */}
@@ -272,8 +307,8 @@ const StrategicPartnerPage = () => {
 
         <p>
           <strong>REGISTERED ADDRESS:</strong> 2-A/3, S/F FRONT SIDE, KUNDAN
-          MANSION ASAF ALI ROAD TURKMAN GATE, DARYA GANJ, CENTRAL DELHI, NEW
-          DELHI, DELHI, INDIA, 110002
+          MANSION ASAF ALI ROAD TURKMAN GATE, TURKMAN GATE, DARYA GANJ, CENTRAL
+          DELHI, NEW DELHI, DELHI, INDIA, 110002
         </p>
 
         <p>
