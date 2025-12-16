@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./FooterSection.module.css";
+import Link from "next/link";
 
 const FooterSection = () => {
   return (
@@ -46,10 +47,14 @@ const FooterSection = () => {
         </div>
 
         <div className={styles.socialRow}>
-          <img src="/assets/images/logo/linkdin.svg" alt="" />
-          <img src="/assets/images/logo/youtube.svg" alt="" />
-          <img src="/assets/images/logo/insta.svg" alt="" />
-          <img src="/assets/images/logo/facebook.svg" alt="" />
+          
+          
+      <Link href = "https://www.linkedin.com/company/104871558/admin/page-posts/published/" target=" ">
+        <img src="/assets/images/logo/linkdin.svg" alt="" /></Link>
+      <Link href = "https://www.youtube.com/@HSKandhari" target=" "><img src="/assets/images/logo/youtube.svg" alt="" /></Link>
+      <Link href = "https://www.instagram.com/thehorizonresidences_official/" target=" ">
+        <img src="/assets/images/logo/insta.svg" alt="" /></Link>
+      <Link href = "https://www.facebook.com/thehorizonresidences/" target=" "><img src="/assets/images/logo/facebook.svg" alt="" /></Link>
         </div>
       </div>
 
