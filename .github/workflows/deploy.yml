@@ -13,10 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build & Deploy with Docker
+      - name: Build & Deploy Docker
         run: |
-          cd /var/www/thehorizon
-          git pull origin main
-          docker compose down
+          docker compose down || true
           docker compose build
           docker compose up -d
