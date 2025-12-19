@@ -4,8 +4,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "The Horizon Residences | Final Launch of 4, 4.5 & 5 BHK Ultra-Luxury Apartments in Indirapuram",
-  description: "Discover The Horizon Residences, offering premium 4, 4.5 & 5 BHK ultra-luxury apartments in Indirapuram. Limited 264 inventory, landmark location - next to shipra mall in gaziabad with world-class amenities, and seamless connectivity.",
+  title: "The Horizon Residences – Luxury 4 & 5 BHK in Indirapuram",
+  description: "The Horizon Residences offers 4 & 5 BHK luxury apartments / flats in Indirapuram. Explore ultra luxury residential property by Harmony Infra in Delhi NCR.",
 };
 
 export default function RootLayout({
@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
        <head>
+        <meta name="google-site-verification" content="wsgUBFKHcbxFw2vFuYCAz90F2yo-vMyNjcg-CYpAim4" />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-9N4VK688HF"
