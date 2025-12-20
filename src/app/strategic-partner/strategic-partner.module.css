@@ -272,7 +272,7 @@
 
   .leftImage {
     width: 100%;
-    order: 1;
+    order: 2;
   }
 
   .leftImage img {
@@ -283,7 +283,7 @@
 
   .rightForm {
     width: 100%;
-    order: 2;
+    order: 1; 
   }
 
   .logoBox {
