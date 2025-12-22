@@ -21,45 +21,45 @@ interface ScrollSectionProps {
   onOpenModal: () => void;
 }
 
-
 const tabs: TabType[] = ["Exterior", "Interior"];
+const VISIBLE_CARDS = 1;
 
 const data: Record<TabType, AmenityItem[]> = {
   Exterior: [
     {
       id: 1,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Acupressure Cam",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/exterior/ext-img-1.webp",
     },
     {
       id: 2,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Butter Fly Garden",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/exterior/ext-img-2.webp",
     },
     {
       id: 3,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Canopy Night",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/exterior/ext-img-3.webp",
     },
     {
       id: 4,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Car Drop Off Zone",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/exterior/ext-img-4.webp",
     },
     {
       id: 5,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Kids paly area with Skating Ring",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/exterior/ext-img-5.webp",
     },
     {
       id: 6,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Porch",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/exterior/ext-img-6.webp",
     },
   ],
@@ -67,110 +67,116 @@ const data: Record<TabType, AmenityItem[]> = {
   Interior: [
     {
       id: 1,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Balcony Cam",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-1.webp",
     },
     {
       id: 2,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Bathroom Cam",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-2.webp",
     },
     {
       id: 3,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Bedroom 1",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-3.webp",
     },
     {
       id: 4,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Bedroom 2",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-4.webp",
     },
     {
       id: 5,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Bedroom 3",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-5.webp",
     },
     {
       id: 6,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Bedroom 4",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-6.webp",
     },
     {
       id: 7,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Cafe Cam",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-7.webp",
     },
     {
       id: 8,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Dining Area Cam",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-8.webp",
     },
     {
       id: 9,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Entrance Lobby",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-9.webp",
     },
     {
       id: 10,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Kitchen 1",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-10.webp",
     },
     {
       id: 11,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Kitchen 2",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-11.webp",
     },
     {
       id: 12,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Lift Lobby",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-12.webp",
     },
     {
       id: 13,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Living Cam",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-13.webp",
     },
     {
       id: 14,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Lounge and bar",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-14.webp",
     },
     {
       id: 15,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
+      propertyType: "Master Bedroom",
+      location: "Indirapuram,Gaziabad",
       img: "/assets/images/interior/Int-img-15.webp",
     },
-    {
-      id: 16,
-      propertyType: "Residential",
-      location: "Sector 99, Dwarka Expy, Gurugram,",
-      img: "/assets/images/interior/Int-img-16.webp",
-    },
+    // {
+    //   id: 16,
+    //   propertyType: "Residential",
+    //   location: "Sector 99, Dwarka Expy, Gurugram,",
+    //   img: "/assets/images/interior/Int-img-16.webp",
+    // },
   ],
 };
 
- const AmentitesScrollSection  : React.FC<ScrollSectionProps> = ({ onOpenModal }) => {
+const AmentitesScrollSection: React.FC<ScrollSectionProps> = ({
+  onOpenModal,
+}) => {
   const [index, setIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<TabType>("Exterior");
+
   const filteredData = data[activeTab];
-  const maxIndex = Math.max(0, filteredData.length - 3);
+
+  const maxIndex = Math.max(0, filteredData.length - VISIBLE_CARDS);
+
   const nextSlide = () => index < maxIndex && setIndex(index + 1);
   const prevSlide = () => index > 0 && setIndex(index - 1);
+  const isLastSlide = index === maxIndex;
 
   return (
     <section id="gallery" className={styles.mainSection}>
@@ -222,7 +228,9 @@ const data: Record<TabType, AmenityItem[]> = {
           <div
             className={styles.slider}
             style={{
-              transform: `translateX(-${index * (100 / 1.3)}%)`,
+              transform: isLastSlide
+                ? `translateX(calc(-${index * (100 / 1.3)}% + 35%))`
+                : `translateX(-${index * (100 / 1.3)}%)`,
             }}
           >
             {filteredData.map((item) => (
@@ -231,14 +239,8 @@ const data: Record<TabType, AmenityItem[]> = {
                   <img src={item.img} alt="img" />
 
                   <div className={styles.overlayText}>
-                    {item.propertyType && (
-                      <p className={styles.propertyTitle}>
-                        {item.propertyType}
-                      </p>
-                    )}
-                    {item.location && (
-                      <p className={styles.locationText}>{item.location}</p>
-                    )}
+                    <p className={styles.propertyTitle}>{item.propertyType}</p>
+                    <p className={styles.locationText}>{item.location}</p>
                   </div>
                 </div>
               </div>
@@ -253,12 +255,15 @@ const data: Record<TabType, AmenityItem[]> = {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
         className={styles.btnTextArea}
       >
-        <button className={`btnPrimary ${styles.visitBtn}`} onClick={onOpenModal}>
+        <button
+          className={`btnPrimary ${styles.visitBtn}`}
+          onClick={onOpenModal}
+        >
           Schedule Site Visit
         </button>
       </motion.div>
     </section>
   );
-}
+};
 
-export default AmentitesScrollSection
+export default AmentitesScrollSection;

@@ -1,8 +1,9 @@
 .mainSection {
   padding: 6rem 0 2rem 0;
-  background: url("/assets/images/overlayBG/bgImg.png") no-repeat center/cover var(--lightColor);
+  background: url("/assets/images/overlayBG/bgImg.png") no-repeat center/cover
+    var(--lightColor);
 }
-.priceHeading{
+.priceHeading {
   font-family: var(--fontePrpetuaMT);
 }
 .heading {
@@ -11,7 +12,6 @@
   font-weight: 600;
   margin-bottom: 3rem;
   color: var(--primary);
-
 }
 
 .tableWrapper {
@@ -48,6 +48,59 @@
 
 .priceTable tbody tr:nth-child(even) {
   background: #f9f9f9;
+}
+
+
+.hotSaleBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 4px 8px;
+  border-radius: 100px;
+  background:var(--primary);
+  width: 130px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+    animation: blink 5s infinite;
+}
+
+.colAdjust{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotate 2s linear infinite;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
