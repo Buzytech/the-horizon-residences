@@ -243,7 +243,7 @@
 .flexiblePlane{
      font-family: var(--fontGilmerBold);
     font-size: 24px;
-    line-height: 10px;
+    line-height: 5px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin:30px auto

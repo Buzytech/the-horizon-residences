@@ -12,7 +12,7 @@ const logos = [
   {
     src: "/assets/images/logo/cocacolalogo1.png",
     alt: "CocaCola",
-    type: "fill",  
+    type: "fill",
     delay: 0.2,
   },
   {
@@ -30,17 +30,16 @@ const logos = [
   {
     src: "/assets/images/logo/vgslogo1.png",
     alt: "School",
-    type: "fill", 
+    type: "fill",
     delay: 0.8,
   },
   {
     src: "/assets/images/logo/easyTigerlogo.png",
     alt: "Easy Tiger",
-    type: "fill", 
+    type: "fill",
     delay: 1.0,
   },
 ];
-
 
 const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
   return (
@@ -68,50 +67,6 @@ const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
           className={styles.legacySection}
         >
           <div className={styles.legacyText}>From the legacy of</div>
-
-          {/* <div className={styles.legacyBrands}>
-            <motion.div
-              className={styles.logoIcon}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Image
-                fill
-                src="/assets/images/logo/cocacolalogo.png"
-                alt="CocaCola" />
-            </motion.div>
-
-            <motion.img
-              src="/assets/images/logo/genesislogo.png"
-              alt="Genesis"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            />
-            <motion.img
-              src="/assets/images/logo/horizonlogo.png"
-              alt="Horizon Group"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            />
-            <motion.img
-              src="/assets/images/logo/vgslogo.png"
-              alt="School"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            />
-            <motion.img
-              src="/assets/images/logo/easyTigerlogo.png"
-              alt="Eazy Tiger"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.10 }}
-            />
-          </div> */}
-
           <div className={styles.legacyBrands}>
             {logos.map((logo, index) => (
               <motion.div
@@ -123,11 +78,12 @@ const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
               >
                 {logo.type === "fill" ? (
                   <Image fill src={logo.src} alt={logo.alt} />
-                ) : ""}
+                ) : (
+                  ""
+                )}
               </motion.div>
             ))}
           </div>
-
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -190,11 +146,9 @@ const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
           className={styles.btnTextArea}
         >
           <div className={styles.flexiblePlane}>
-            50:25:25 Flexible Payment Plan
+            Customise Payment Plan Available
           </div>
-          <div className={styles.residenceDetails}>
-            4, 4.5, 5 BHK RESIDENCES
-          </div>
+          <div className={styles.residenceDetails}>4 / 5 BHK RESIDENCES</div>
           <button
             onClick={onOpenModal}
             className={`btnPrimary ${styles.visitBtn}`}

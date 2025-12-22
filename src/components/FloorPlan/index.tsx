@@ -14,52 +14,52 @@ interface FloorProps {
 const data = [
   {
     id: 1,
-    title: "A UPPER FLOOR PLAN",
+    title: "FLOOR PLAN UNIT 1",
     img: "/assets/images/floorPlan/floor_plan1.webp",
   },
   {
     id: 2,
-    title: "PH-A TERRACE PLAN",
+    title: "FLOOR PLAN UNIT 2",
     img: "/assets/images/floorPlan/floor_plan2.webp",
   },
   {
     id: 3,
-    title: "PH-B LOWER FLOOR PLAN",
+    title: "FLOOR PLAN UNIT 3",
     img: "/assets/images/floorPlan/floor_plan3.webp",
   },
   {
     id: 4,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 4",
     img: "/assets/images/floorPlan/floor_plan4.webp",
   },
   {
     id: 5,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 5",
     img: "/assets/images/floorPlan/floor_plan5.webp",
   },
   {
     id: 6,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 6",
     img: "/assets/images/floorPlan/floor_plan6.webp",
   },
   {
     id: 7,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 7",
     img: "/assets/images/floorPlan/floor_plan7.webp",
   },
   {
     id: 8,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 8",
     img: "/assets/images/floorPlan/floor_plan8.webp",
   },
   {
     id: 9,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 9",
     img: "/assets/images/floorPlan/floor_plan9.webp",
   },
   {
     id: 10,
-    title: "PH-C PLAN",
+    title: "FLOOR PLAN UNIT 10",
     img: "/assets/images/floorPlan/floor_plan10.webp",
   },
 ];
