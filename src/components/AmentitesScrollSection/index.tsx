@@ -29,37 +29,37 @@ const data: Record<TabType, AmenityItem[]> = {
     {
       id: 1,
       propertyType: "Acupressure Cam",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/exterior/ext-img-1.webp",
     },
     {
       id: 2,
       propertyType: "Butter Fly Garden",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/exterior/ext-img-2.webp",
     },
     {
       id: 3,
       propertyType: "Canopy Night",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/exterior/ext-img-3.webp",
     },
     {
       id: 4,
       propertyType: "Car Drop Off Zone",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/exterior/ext-img-4.webp",
     },
     {
       id: 5,
       propertyType: "Kids paly area with Skating Ring",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/exterior/ext-img-5.webp",
     },
     {
       id: 6,
       propertyType: "Porch",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/exterior/ext-img-6.webp",
     },
   ],
@@ -68,91 +68,91 @@ const data: Record<TabType, AmenityItem[]> = {
     {
       id: 1,
       propertyType: "Balcony Cam",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-1.webp",
     },
     {
       id: 2,
       propertyType: "Bathroom Cam",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-2.webp",
     },
     {
       id: 3,
       propertyType: "Bedroom 1",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-3.webp",
     },
     {
       id: 4,
       propertyType: "Bedroom 2",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-4.webp",
     },
     {
       id: 5,
       propertyType: "Bedroom 3",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-5.webp",
     },
     {
       id: 6,
       propertyType: "Bedroom 4",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-6.webp",
     },
     {
       id: 7,
       propertyType: "Cafe Cam",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-7.webp",
     },
     {
       id: 8,
       propertyType: "Dining Area Cam",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-8.webp",
     },
     {
       id: 9,
       propertyType: "Entrance Lobby",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-9.webp",
     },
     {
       id: 10,
       propertyType: "Kitchen 1",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-10.webp",
     },
     {
       id: 11,
       propertyType: "Kitchen 2",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-11.webp",
     },
     {
       id: 12,
       propertyType: "Lift Lobby",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-12.webp",
     },
     {
       id: 13,
       propertyType: "Living Cam",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-13.webp",
     },
     {
       id: 14,
       propertyType: "Lounge and bar",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-14.webp",
     },
     {
       id: 15,
       propertyType: "Master Bedroom",
-      location: "Indirapuram,Gaziabad",
+      location: "Indirapuram , Gaziabad",
       img: "/assets/images/interior/Int-img-15.webp",
     },
     // {
@@ -180,10 +180,10 @@ const AmentitesScrollSection: React.FC<ScrollSectionProps> = ({
 
   return (
     <section id="gallery" className={styles.mainSection}>
-      <div className={styles.gallery}>Amenities</div>
-      <div className={styles.gallerySection}>
+      <div className={styles.gallery}>Luxurious Amenities</div>
+      {/* <div className={styles.gallerySection}>
         Countless Reasons to Feel Alive
-      </div>
+      </div> */}
       <div className={styles.tabs}>
         {tabs.map((tab) => (
           <button

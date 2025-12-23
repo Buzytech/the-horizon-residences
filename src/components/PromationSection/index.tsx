@@ -113,7 +113,7 @@ const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
             <ul>
               <li>Last luxury address in Indirapuram</li>
               <li>264 exclusive residences in 4, 4.5 & 5 BHK configurations</li>
-              <li>Located near premium retail & lifestyle zones</li>
+              <li>Low-Density Living, Only 264 Luxury Apartments in 2 towers</li>
               <li>Private Zoom rooms and dedicated service quarters</li>
               <li>Elegant architecture with abundant natural light</li>
               <li>Seamless connectivity to schools, hospitals & metro</li>
@@ -128,7 +128,7 @@ const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
           className={styles.pricingSection}
         >
           <div className={styles.priceBox}>
-            <div className={styles.priceAmount}>₹ 6.18 CR*</div>
+            <div className={styles.priceAmount}>₹ 5.99 CR*</div>
             <div className={styles.priceText}>ONWARDS</div>
           </div>
 
@@ -145,10 +145,16 @@ const PromationSection: React.FC<promationsProps> = ({ onOpenModal }) => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           className={styles.btnTextArea}
         >
+          <div className={styles.alineSpecila}>
           <div className={styles.flexiblePlane}>
-            Customise Payment Plan Available
+           Special offer 
           </div>
-          <div className={styles.residenceDetails}>4 / 5 BHK RESIDENCES</div>
+            <div className={styles.flexiblePlane}>
+           with Customised Payment Plan 
+          </div>
+          </div>
+             
+          <div className={styles.residenceDetails}>4 & 5 BHK ULTRA LUXURY RESIDENCES </div>
           <button
             onClick={onOpenModal}
             className={`btnPrimary ${styles.visitBtn}`}

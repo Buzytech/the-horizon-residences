@@ -19,10 +19,10 @@ const ThankYou = () => {
         </div>
        
         <div className={styles.textBlock}>
-          <h2 className={styles.title}>You're All Set</h2>
+          <h2 className={styles.title}> Thank you for your interest.</h2>
           <h3 className={styles.subTitle}>Greetings from Harmony Infra</h3>
           <p className={styles.message}>
-            Thank you for your interest. Our Sales Manager will get in touch with you shortly.
+            Our Sales Manager will get in touch with you shortly.
           </p>
         </div>
 
