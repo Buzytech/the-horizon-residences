@@ -3,43 +3,49 @@
 
 @font-face {
   font-family: "timesI";
-  src: url("/assets/fonts/times_i.woff");
+  src: url("/assets/fonts/times_i.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "perpetua_MT";
-  src: url("/assets/fonts/perpetua_MT.woff");
+  src: url("/assets/fonts/perpetua_MT.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "gilroyRegular";
-  src: url("/assets/fonts/gilroyRegular.woff");
+  src: url("/assets/fonts/gilroyRegular.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "gilroyBold";
-  src: url("/assets/fonts/gilroyBold.woff");
+  src: url("/assets/fonts/gilroyBold.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "gilmerBold";
-  src: url("/assets/fonts/gilmerBold.woff");
+  src: url("/assets/fonts/gilmerBold.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "gilmerMedium";
-  src: url("/assets/fonts/gilmerMedium.woff");
+  src: url("/assets/fonts/gilmerMedium.woff") format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: "english157";
-  src: url("/assets/fonts/english157.woff");
+  src: url("/assets/fonts/english157.woff") format("woff");
+  font-display: swap;
 }
-
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primaryBlack: #0a131d;
-  --primaryBlue:#002869;
+  --primaryBlue: #002869;
   --primary: #72322a;
   --primary2: #631f1f;
   --lightColor: #fff7eb;
-  --moreLight:#d7a9a0;
+  --moreLight: #d7a9a0;
   --darkRedcolor: #631f1f;
   --chestnutBrown: #8c4f3d;
   --borderColor: #e8b9af;
@@ -50,7 +56,7 @@
   --fontMontserrat: "Montserrat", sans-serif;
   --fontGilmerBold: "gilmerBold";
   --fontGilmerMedium: "gilmerMedium";
-  --fontEnglish157:"english157";
+  --fontEnglish157: "english157";
 }
 
 @theme inline {
@@ -83,7 +89,6 @@ body {
   font-weight: 600;
   padding: 1.7rem 4.4rem;
   cursor: pointer;
-
 }
 
 @media (max-width: 768px) {
